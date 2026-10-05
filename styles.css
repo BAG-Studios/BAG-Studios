@@ -673,3 +673,37 @@ a {
 }
 
 }
+/* Game details and studio blog */
+.editorial-page { max-width: 1200px; margin: 90px auto 0; padding: 70px 5% 90px; }
+.editorial-page h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.12; margin-bottom: 24px; }
+.editorial-page h3 { font-size: 24px; margin-bottom: 14px; }
+.editorial-page p { line-height: 1.75; margin-bottom: 20px; }
+.editorial-page .eyebrow { color: #c9a64f; font-size: 13px; font-weight: bold; letter-spacing: 1.4px; text-transform: uppercase; }
+.editorial-page .lead { font-size: 20px; }
+.game-intro { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+.game-intro img { width: 100%; border-radius: 10px; }
+.page-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+.page-button { background: #c9a64f; color: #111; padding: 14px 20px; border: 1px solid #c9a64f; border-radius: 5px; font-weight: bold; }
+.page-button.secondary { color: var(--text-color); background: transparent; border-color: var(--cardtop-color); }
+.page-button:hover { filter: brightness(1.15); }
+.article-section { margin-top: 70px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.feature-grid > div { background: var(--alt-color); padding: 26px; border-radius: 8px; }
+.showcase-video { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
+.blog-page { max-width: 1040px; }
+.blog-heading { margin-bottom: 60px; border-bottom: 1px solid var(--cardtop-color); padding-bottom: 30px; }
+.event-article figure { margin: 36px 0; }
+.event-article figure img { width: 100%; max-height: 650px; object-fit: contain; background: var(--alt-color); border-radius: 8px; }
+.event-article figcaption { font-size: 14px; line-height: 1.6; margin-top: 12px; opacity: .75; }
+.article-copy { max-width: 750px; margin: 40px auto; }
+@media (max-width: 1100px) { .navbar { padding: 0 3%; } .logo-nav h1 { font-size: 26px; } .nav-links a { padding: 0 12px; font-size: 18px; } }
+@media (max-width: 700px) {
+    .navbar { height: auto; min-height: 90px; flex-wrap: wrap; justify-content: center; padding: 10px 12px 0; }
+    .logo-nav { justify-content: center; } .logo-nav h1 { font-size: 24px; }
+    .nav-links { width: 100%; height: 48px; justify-content: center; }
+    .nav-links a { padding: 0 10px; font-size: 16px; } .nav-links .social-icon { display: none; }
+    .editorial-page { margin-top: 120px; padding-top: 40px; }
+    .game-intro, .feature-grid { grid-template-columns: 1fr; } .game-intro { gap: 28px; }
+    .article-section { margin-top: 45px; } .blog-heading { margin-bottom: 40px; }
+    .hero { margin-top: 120px; } .games-section { padding-top: 160px; }
+}
