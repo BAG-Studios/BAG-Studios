@@ -1,0 +1,35 @@
+/* Approved team layout, with the existing character introduction retained. */
+@font-face { font-family:Studio; src:local('Bahnschrift'); font-display:swap; }
+#studio-team { width:calc(100% - 2 * var(--site-gutter)); margin-inline:auto; color:#f3f1ea; font:16px/1.6 Arial,Helvetica,sans-serif; }
+#studio-team h2,#studio-team h3 { font-family:Studio,Arial,sans-serif; line-height:1.04; letter-spacing:-.045em; font-weight:650; }
+#studio-team h2 { font-size:clamp(36px,4.2vw,64px); }
+#studio-team p { color:#babbb9; }
+#studio-team img { display:block; max-width:100%; height:auto; }
+#studio-team .member-photo img { width:100%; height:100%; }
+@font-face{font-family:Studio;src:local('Bahnschrift');font-display:swap}
+#studio-team .eyebrow,#studio-team .meta{font:11px/1.5 Arial,sans-serif;letter-spacing:.15em;font-weight:700}
+#studio-team .eyebrow{color:#c9a64f}
+#studio-team .section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:38px}
+#studio-team .section-top h2{margin-top:14px}
+#studio-team .section-top .meta{color:#aaa}
+#studio-team{padding:45px 0 100px}
+#studio-team .studio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px 35px}
+#studio-team .member-photo{height:330px;overflow:hidden;background:#202226}
+#studio-team .member-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:filter .3s,transform .3s}
+#studio-team .member:hover img{filter:saturate(1);transform:scale(1.025)}
+#studio-team .member .eyebrow{font-size:9px;margin-top:23px}
+#studio-team .member h3{font-size:26px;letter-spacing:-.025em;margin-top:8px}
+#studio-team .member-games{font-size:13px;line-height:1.7;margin-top:15px;max-width:350px}
+#studio-team .member-games span{display:block;font-size:10px;color:#838a7e;margin-bottom:6px}
+@media(max-width:1100px){#studio-team .member-photo{height:280px}}
+@media(max-width:760px){#studio-team .section-top{gap:20px;align-items:start}
+#studio-team .section-top h2{font-size:36px}
+#studio-team .section-top .text-link{font-size:11px;gap:12px}
+#studio-team .studio-grid{grid-template-columns:1fr 1fr;gap:40px 18px}
+#studio-team .member-photo{height:220px}
+#studio-team .member h3{font-size:23px;line-height:1.12}
+#studio-team .member-games{font-size:12px}
+#studio-team .member .eyebrow{font-size:8px}
+#studio-team{padding-bottom:65px}}
+@media(max-width:400px){#studio-team .studio-grid{grid-template-columns:1fr}
+#studio-team .member-photo{height:370px}}
