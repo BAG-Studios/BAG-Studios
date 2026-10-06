@@ -708,7 +708,7 @@ a {
     .hero { margin-top: 120px; } .games-section { padding-top: 160px; }
 }
 /* News archive: compact previews link to separate articles */
-.news-archive { margin-top: 90px; min-height: 72vh; background: #fafafa; color: #202126; position: relative; overflow: hidden; }
+.news-archive { margin-top: 90px; min-height: 72vh; background: var(--base-color); color: var(--text-color); position: relative; overflow: hidden; }
 .news-shell { max-width: 1280px; margin: auto; padding: 90px 5% 110px; position: relative; }
 .news-title { font-size: clamp(42px, 5vw, 64px); font-weight: 700; letter-spacing: -1.5px; margin: 0 0 90px; }
 .news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
