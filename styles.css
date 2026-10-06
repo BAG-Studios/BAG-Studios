@@ -689,7 +689,7 @@ a {
 .site-brand { display: flex; align-items: center; gap: 14px; color: #f3f1ea; font: 750 19px/1 Arial, sans-serif; letter-spacing: .015em; }
 .site-brand img { width: 46px; height: 43px; object-fit: contain; }
 .site-brand-light { font-weight: 400; }
-.site-header nav { display: flex; align-items: center; gap: 34px; font: 13px/1.6 Arial, sans-serif; }
+.site-header nav { display: flex; align-items: center; gap: 34px; font: 16px/1.6 Arial, sans-serif; }
 .site-header nav a { padding: 10px 0; color: #ddd; transition: color .2s; }
 .site-header nav a:hover, .site-header nav a[aria-current] { color: #c9a64f; }
 .site-menu-button { display: none; }
@@ -730,5 +730,5 @@ a {
     .home-page .hero-content h2 { font-size: clamp(40px, 10.5vw, 60px); }
 }
 .site-header nav .nav-discord { display: flex; align-items: center; }
-.site-header .nav-discord img { width: 24px; height: 24px; object-fit: contain; }
+.site-header .nav-discord img { width: 28px; height: 28px; object-fit: contain; }
 .site-header .nav-discord:hover img { opacity: .75; }
