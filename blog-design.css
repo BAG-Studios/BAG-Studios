@@ -14,7 +14,7 @@
 .blog-card:hover { transform:translateY(-4px); border-color:#c9a64f80; box-shadow:0 12px 28px #0003; }
 .blog-card-bottom { display:flex; flex-direction:column; align-items:flex-start; gap:18px; margin-top:auto; }
 .blog-card-bottom p { flex:1; font:15px/1.7 Arial,sans-serif; color:#d1d1cb; margin:0; }
-.blog-read-more { color:#c9a64f; font:700 14px/1.5 Arial,sans-serif; }
+.blog-read-more { display:inline-flex; align-items:center; background:#c9a64f; border:1px solid #c9a64f; color:#121410; padding:16px 23px; font:700 13px/1.6 Arial,sans-serif; }
 .blog-card:focus-visible { outline:2px solid #c9a64f; outline-offset:5px; }
 @media(max-width:850px) { .blog-grid { grid-template-columns:1fr; } }
 @media(max-width:600px) { .blog-showcase { padding-block:120px 65px; } .blog-grid { grid-template-columns:1fr; gap:32px; } .blog-card { min-height:0; } }
