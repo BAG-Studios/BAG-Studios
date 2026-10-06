@@ -7,6 +7,7 @@
 
 /* Main colors on website */
 :root{
+    color-scheme: dark;
 
     --base-color: #111;
     --alt-color: #181818;
@@ -16,57 +17,6 @@
     --header-select-color: #333333e5;
 
 }
-
-/* Light mode colors */
-.lightmode{
-
-    --base-color: #ffffff;
-    --alt-color: #f0f0f0;
-    --text-color: #000000;
-    --cardtop-color: #d8d8d8;
-    --header-color: #f0f0f0d5;
-    --header-select-color: #a8a8a8e5;
-
-}
-
-
-#theme-switch {
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-
-    background-color: var(--text-color);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    top: 80%;
-    right: 45px;
-    transform: translateY(-50%);
-
-    z-index: 1000;
-    cursor: pointer;
-}
-
-#theme-switch svg{
-    fill: var(--base-color);
-}
-.lightmode #theme-switch svg:last-child{
-    display: none;
-}
-#theme-switch svg:first-child{
-    display: none;
-}
-.lightmode #theme-switch svg:first-child{
-    display: block;
-}
-
-
-
 
 .social-icon svg {
     fill: var(--text-color);

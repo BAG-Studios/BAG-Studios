@@ -1,29 +1,4 @@
-
-let lightmode = localStorage.getItem("lightmode");
-const themeSwitch = document.getElementById("theme-switch");
-
-const enableLightmode = () => {
-    document.body.classList.add("lightmode");
-    localStorage.setItem("lightmode", "active");
-};
-
-const disableLightmode = () => {
-    document.body.classList.remove("lightmode");
-    localStorage.removeItem("lightmode");
-};
-
-
-if (lightmode === "active") {
-    enableLightmode();
-}
-
-
-themeSwitch.addEventListener("click", () => {
-    lightmode = localStorage.getItem("lightmode");
-
-    if (lightmode !== "active") {
-        enableLightmode();
-    } else {
-        disableLightmode();
-    }
-});
+// Compatibility for previously cached pages. The site now uses dark mode only.
+document.body.classList.remove('lightmode');
+document.getElementById('theme-switch')?.remove();
+try { localStorage.removeItem('lightmode'); } catch (_) { /* Storage can be disabled. */ }
