@@ -1,0 +1,83 @@
+/* ATIRA content styles from the approved preview; header/footer use shared styles. */
+.atira-page { background:#111214; color:#f3f1ea; }
+.atira-page #main { font:16px/1.6 Arial,Helvetica,sans-serif; }
+.atira-page #main h1,.atira-page #main h2,.atira-page #main h3 { font-family:Studio,Arial,sans-serif; line-height:1.04; letter-spacing:-.045em; font-weight:650; }
+.atira-page #main h2 { font-size:clamp(36px,4.2vw,64px); }
+.atira-page #main h3 { font-size:clamp(28px,3vw,44px); }
+.atira-page #main p { color:#babbb9; }
+.atira-page #main p+p { margin-top:20px; }
+.atira-page #main img { display:block; max-width:100%; height:auto; }
+.atira-page #main .wrap { width:calc(100% - 2 * var(--site-gutter)); margin-inline:auto; }
+.atira-page #main button { font-family:inherit; line-height:inherit; cursor:pointer; }
+.atira-page #main :focus-visible { outline:2px solid #c9a64f; outline-offset:6px; }
+.atira-page .trailer-dialog { margin:auto; }
+.atira-page #showcase { scroll-margin-top:100px; }
+@font-face{font-family:Studio;src:local('Bahnschrift');font-display:swap}
+.atira-page #main .eyebrow,.atira-page #main .meta,.atira-page #main .subtitle{font:11px/1.5 Arial,sans-serif;letter-spacing:.15em;font-weight:700}
+.atira-page #main .eyebrow{color:#c9a64f}
+.atira-page #main .fineprint{font-size:12px;color:#93968e;margin-top:20px}
+.atira-page #main .actions{display:flex;align-items:center;flex-wrap:wrap;gap:28px;margin-top:35px}
+.atira-page #main .button{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;background:#c9a64f;border:1px solid #c9a64f;color:#121410;padding:16px 23px;font-size:13px;font-weight:700;transition:background .2s,transform .2s}
+.atira-page #main .button:hover{background:#e0bb68;transform:translateY(-2px)}
+.atira-page #main .button.secondary{color:#eee;background:transparent;border-color:#ffffff40}
+.atira-page #main .text-button{font-size:13px;font-weight:600;color:#f3f1ea;display:inline-flex;gap:35px;align-items:center;line-height:1.7}
+.atira-page #main .text-button{border:0;background:none;padding:12px 0}
+.atira-page #main .text-button:hover{color:#c9a64f}
+.atira-page #main .section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.atira-page #main .section-top h2{margin-top:14px}
+.atira-page #main .section-top .meta{color:#aaa}
+.atira-page #main .atira-title{font-family:Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:-.06em;font-weight:750}
+.atira-page #main .subtitle{color:#f3f1ea;letter-spacing:.3em;margin-top:2px}
+.atira-page #main .game-hero{height:850px;position:relative;isolation:isolate;overflow:hidden}
+.atira-page #main .game-hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:-3}
+.atira-page #main .game-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0e1011dd 15%,#0e101130 85%),linear-gradient(0deg,#111214,transparent 35%);z-index:-2}
+.atira-page #main .game-hero-copy{padding-top:260px}
+.atira-page #main .game-hero h1{font-size:170px;margin:18px 0 0}
+.atira-page #main .game-hero .subtitle{font-size:15px;margin-bottom:35px}
+.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){color:#eee;font-size:20px}
+.atira-page #main .game-facts{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid #ffffff20;padding-block:30px}
+.atira-page #main .game-facts span{display:block;color:#92998c;font-size:10px;letter-spacing:.15em;margin-bottom:10px}
+.atira-page #main .game-facts strong{font-size:15px;font-weight:500}
+.atira-page #main .arena-section{padding:100px 0}
+.atira-page #main .arena-section>.section-top{align-items:start}
+.atira-page #main .feature-row{display:grid;grid-template-columns:1.3fr 1fr;gap:85px;align-items:center;margin-top:70px}
+.atira-page #main .feature-row.feature-reverse{grid-template-columns:1fr 1.3fr}
+.atira-page #main .feature-row.feature-reverse .feature-visual{order:2}
+.atira-page #main .feature-visual{height:430px;background:#191a1d;overflow:hidden}
+.atira-page #main .feature-visual img{width:100%;height:100%;object-fit:cover}
+.atira-page #main .feature-number{font:12px/1 Arial;letter-spacing:.1em;color:#c9a64f;display:block;margin-bottom:25px}
+.atira-page #main .feature-row h3{font-size:45px;margin-bottom:24px}
+.atira-page #main .feature-row p{max-width:440px;line-height:1.85}
+.atira-page #main .showcase{padding:0 0 100px}
+.atira-page #main .video-preview{display:block;width:100%;height:580px;position:relative;padding:0;border:0;background:#181818;overflow:hidden}
+.atira-page #main .video-preview img{width:100%;height:100%;object-fit:cover;filter:brightness(.62);transition:filter .3s}
+.atira-page #main .video-preview:hover img{filter:brightness(.85)}
+.atira-page #main .play-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;display:grid;place-items:center;color:#111;background:#c9a64f;border-radius:50%;font-size:22px;padding-left:4px}
+.atira-page #main .video-caption{position:absolute;bottom:28px;left:30px;right:30px;display:flex;justify-content:space-between;font-size:15px;color:#fff}
+.atira-page .trailer-dialog{padding:50px 24px 24px;border:1px solid #ffffff30;background:#111214;width:min(1100px,95vw);max-height:95svh;color:#eee}
+.atira-page .trailer-dialog::backdrop{background:#000d;backdrop-filter:blur(5px)}
+.atira-page .close-dialog{position:absolute;right:24px;top:12px;background:none;color:white;border:none;font-size:13px}
+.atira-page .video-host iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+@media(max-width:1100px){.atira-page #main .feature-row{gap:40px}}
+@media(max-width:760px){.atira-page #main .section-top{gap:20px;align-items:start}
+.atira-page #main .section-top h2{font-size:36px}
+.atira-page #main .section-top .text-link{font-size:11px;gap:12px}
+.atira-page #main .game-hero{height:760px}
+.atira-page #main .game-hero-art{object-position:53% center}
+.atira-page #main .game-hero-copy{padding-top:220px}
+.atira-page #main .game-hero h1{font-size:110px}
+.atira-page #main .game-hero .subtitle{font-size:11px}
+.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){font-size:18px}
+.atira-page #main .game-hero .actions{gap:16px;flex-direction:column;align-items:start}
+.atira-page #main .game-facts{grid-template-columns:1fr 1fr;gap:30px}
+.atira-page #main .arena-section{padding:65px 0}
+.atira-page #main .arena-section>.section-top{flex-direction:column}
+.atira-page #main .feature-row,.atira-page #main .feature-row.feature-reverse{grid-template-columns:1fr;gap:28px;margin-top:50px}
+.atira-page #main .feature-row.feature-reverse .feature-visual{order:0}
+.atira-page #main .feature-visual{height:310px}
+.atira-page #main .feature-row h3{font-size:35px}
+.atira-page #main .feature-number{margin-bottom:15px}
+.atira-page #main .showcase{padding-bottom:65px}
+.atira-page #main .video-preview{height:300px}
+.atira-page #main .play-circle{width:60px;height:60px;font-size:16px}
+.atira-page #main .video-caption{bottom:18px;left:20px;right:20px;font-size:12px}}
