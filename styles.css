@@ -816,3 +816,8 @@ a {
  .site-footer .footer-bottom span:nth-child(2) { display: none; }
 }
 @media(prefers-reduced-motion:reduce) { .community .button { transition: none; } }
+
+/* Home artwork crop and hero dimensions match the approved preview. */
+.home-page .hero { height: 100svh; min-height: 800px; max-height: 1120px; background-position: center 35%; }
+@media(min-width:1700px) { .home-page .hero { background-position: center 42%; } }
+@media(max-width:760px) { .home-page .hero { height: 850px; min-height: 740px; max-height: none; background-position: 61% center; } }
