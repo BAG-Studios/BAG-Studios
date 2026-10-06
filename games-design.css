@@ -7,7 +7,7 @@
 .games-feature { display:grid; grid-template-columns:1fr 1fr; background:#17191b; border:1px solid #ffffff18; }
 .games-art { position:relative; display:block; overflow:hidden; min-height:610px; }
 .games-art img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; transition:transform .4s; }
-.games-art:hover img { transform:scale(1.025); }
+.games-feature:hover .games-art img { transform:scale(1.025); }
 .games-art::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#0009,transparent 30%); pointer-events:none; }
 .games-art > span { position:absolute; bottom:28px; left:28px; z-index:1; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.14em; }
 .games-copy { padding:clamp(28px,3.5vw,56px); align-self:center; }
