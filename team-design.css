@@ -15,8 +15,8 @@
 #studio-team{padding:45px 0 100px}
 #studio-team .studio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px 35px}
 #studio-team .member-photo{height:330px;overflow:hidden;background:#202226}
-#studio-team .member-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:filter .3s,transform .3s}
-#studio-team .member:hover img{filter:saturate(1);transform:scale(1.025)}
+#studio-team .member-photo img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+#studio-team .member:hover img{transform:scale(1.025)}
 #studio-team .member .eyebrow{font-size:9px;margin-top:23px}
 #studio-team .member h3{font-size:26px;letter-spacing:-.025em;margin-top:8px}
 #studio-team .member-games{font-size:13px;line-height:1.7;margin-top:15px;max-width:350px}
