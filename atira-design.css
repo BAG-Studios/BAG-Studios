@@ -29,7 +29,7 @@
 .atira-page #main .atira-title{font-family:Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:-.06em;font-weight:750}
 .atira-page #main .subtitle{color:#f3f1ea;letter-spacing:.3em;margin-top:2px}
 .atira-page #main .game-hero{height:850px;position:relative;isolation:isolate;overflow:hidden}
-.atira-page #main .game-hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:-3}
+.atira-page #main .game-hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scaleX(-1);z-index:-3}
 .atira-page #main .game-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0e1011dd 15%,#0e101130 85%),linear-gradient(0deg,#111214,transparent 35%);z-index:-2}
 .atira-page #main .game-hero-copy{padding-top:260px}
 .atira-page #main .game-hero h1{font-size:170px;margin:18px 0 0}
