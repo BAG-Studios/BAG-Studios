@@ -1,0 +1,32 @@
+@font-face { font-family:Studio; src:local('Bahnschrift'); font-display:swap; }
+.games-showcase { padding:160px var(--site-gutter) 100px; color:#f3f1ea; }
+.games-heading { margin-bottom:55px; }
+.games-eyebrow { color:#c9a64f; font:700 10px/1.6 Arial,sans-serif; letter-spacing:.15em; margin-bottom:22px; }
+.games-heading h1 { font:650 clamp(46px,5vw,72px)/1.05 Studio,Arial,sans-serif; letter-spacing:-.045em; margin-bottom:22px; }
+.games-heading > p:last-child { color:#babbb9; font:17px/1.7 Arial,sans-serif; }
+.games-feature { display:grid; grid-template-columns:1fr 1fr; background:#17191b; border:1px solid #ffffff18; }
+.games-art { position:relative; display:block; overflow:hidden; min-height:610px; }
+.games-art img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; transition:transform .4s; }
+.games-art:hover img { transform:scale(1.025); }
+.games-art::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,#0009,transparent 30%); pointer-events:none; }
+.games-art > span { position:absolute; bottom:28px; left:28px; z-index:1; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.14em; }
+.games-copy { padding:clamp(28px,3.5vw,56px); align-self:center; }
+.games-status { display:flex; align-items:center; gap:9px; color:#c9a64f; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.12em; margin-bottom:24px; }
+.games-status span { width:6px; height:6px; background:#c9a64f; border-radius:50%; }
+.games-copy h2 { font:750 clamp(64px,7vw,104px)/.95 Studio,Arial,sans-serif; letter-spacing:-.06em; margin-bottom:12px; }
+.games-subtitle { font:700 10px/1.6 Arial,sans-serif; letter-spacing:.24em; margin-bottom:30px; }
+.games-summary { font:19px/1.65 Arial,sans-serif; margin-bottom:18px; }
+.games-description { color:#babbb9; font:15px/1.8 Arial,sans-serif; max-width:450px; }
+.games-facts { display:grid; grid-template-columns:1fr 1fr; gap:25px; border-top:1px solid #ffffff20; padding-top:23px; margin:28px 0; }
+.games-facts dt { color:#92988e; font:700 9px/1.5 Arial,sans-serif; letter-spacing:.1em; margin-bottom:8px; }
+.games-facts dd { margin:0; font:14px/1.5 Arial,sans-serif; }
+.games-links { display:flex; align-items:center; flex-wrap:wrap; gap:25px; }
+.games-links a { display:inline-flex; align-items:center; gap:30px; font:700 12px/1.6 Arial,sans-serif; }
+.games-primary { padding:16px 22px; background:#c9a64f; color:#111; }
+.games-primary:hover { background:#e0bb68; }
+.games-demo:hover { color:#c9a64f; }
+.games-note { margin-top:22px; color:#92988e; font:11px/1.6 Arial,sans-serif; }
+.games-showcase :focus-visible { outline:2px solid #c9a64f; outline-offset:5px; }
+@media(max-width:1000px) { .games-copy { padding:30px; } .games-links { gap:20px; } }
+@media(max-width:760px) { .games-showcase { padding-block:125px 70px; } .games-heading { margin-bottom:35px; } .games-feature { grid-template-columns:1fr; } .games-art { min-height:430px; } .games-copy { padding:30px 24px; } }
+@media(prefers-reduced-motion:reduce) { .games-art img { transition:none; } }
