@@ -13,7 +13,7 @@
 .contact-person dl div + div { margin-top:12px; }
 .contact-person dt { color:#92988e; font:12px/1.5 Arial,sans-serif; margin-bottom:4px; }
 .contact-person dd { margin:0; font:600 15px/1.6 Arial,sans-serif; overflow-wrap:anywhere; }
-.contact-person dd a:hover { color:#c9a64f; }
+.contact-person dd a:hover { color:#c9a64f; text-decoration:underline; text-underline-offset:3px; }
 .contact-discord { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #ffffff20; padding-top:22px; margin-top:28px; color:#c9a64f; font:700 13px/1.6 Arial,sans-serif; }
 .contact-redesign .contact-form { margin:0; max-width:none; padding:0; border:0; background:none; border-radius:0; gap:12px; }
 .contact-redesign .contact-form label { font:600 13px/1.6 Arial,sans-serif; margin-top:10px; }
