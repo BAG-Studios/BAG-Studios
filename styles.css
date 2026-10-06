@@ -732,3 +732,19 @@ a {
 .site-header nav .nav-discord { display: flex; align-items: center; }
 .site-header .nav-discord img { width: 28px; height: 28px; object-fit: contain; }
 .site-header .nav-discord:hover img { opacity: .75; }
+/* Intro and actions below the Home title. */
+.home-page .hero-intro { margin-top: 30px; color: #d0d0c9; font-size: 18px; line-height: 1.65; max-width: 520px; }
+.home-page .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 35px; }
+.home-page .hero-actions a { display: inline-flex; align-items: center; justify-content: space-between; gap: 40px; font-size: 13px; font-weight: 700; line-height: 1.7; }
+.home-page .hero-discover { background: #c9a64f; color: #111; border: 1px solid #c9a64f; padding: 16px 23px; transition: background .2s; }
+.home-page .hero-discover:hover { background: #e0bb68; }
+.home-page .hero-watch { color: #f3f1ea; padding: 12px 0; }
+.home-page .hero-watch:hover { color: #c9a64f; }
+.home-page .hero-actions a:focus-visible { outline: 2px solid #c9a64f; outline-offset: 6px; }
+#official-trailer { scroll-margin-top: 85px; }
+@media(max-width:760px) {
+    .home-page .hero-intro { font-size: 16px; margin-top: 26px; }
+    .home-page .hero-desktop-break { display: none; }
+    .home-page .hero-actions { flex-direction: column; align-items: flex-start; gap: 18px; margin-top: 27px; }
+}
+@media(prefers-reduced-motion:reduce) { .home-page .hero-discover { transition: none; } }
