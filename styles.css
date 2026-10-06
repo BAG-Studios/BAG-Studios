@@ -842,3 +842,9 @@ html { scroll-behavior: smooth; }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
 
 .home-page .hero-content h2 .hero-studios { color: #c9a64f; }
+
+/* Standalone exploration cue at the bottom of the Home artwork. */
+.home-page .hero-explore { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 8px; color: #d0d0c9; font: 10px/1.6 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.home-page .hero-explore:hover { color: #c9a64f; }
+.home-page .hero-explore:focus-visible { outline: 2px solid #c9a64f; outline-offset: 4px; }
+@media(max-width:760px) { .home-page .hero-explore { bottom: 25px; } }
