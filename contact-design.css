@@ -1,0 +1,26 @@
+.contact-redesign { padding-block:160px 100px; text-align:left; }
+.contact-redesign .contact-eyebrow { color:#c9a64f; font:700 10px/1.6 Arial,sans-serif; letter-spacing:.15em; margin:0 0 22px; }
+.contact-redesign h1 { font:650 clamp(42px,5vw,68px)/1.08 Arial,sans-serif; letter-spacing:-.045em; margin:0 0 25px; }
+.contact-redesign .contact-lead { font:17px/1.8 Arial,sans-serif; color:#babbb9; margin:0 0 55px; }
+.contact-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:70px; align-items:start; }
+.contact-person { background:#17191b; border:1px solid #ffffff20; }
+.contact-person-role { padding:22px 28px; border-bottom:1px solid #c9a64f55; color:#c9a64f; font:700 10px/1.5 Arial,sans-serif; letter-spacing:.14em; }
+.contact-person-body { padding:28px; }
+.contact-person img { display:block; width:100%; height:300px; object-fit:cover; object-position:50% 40%; margin-bottom:28px; }
+.contact-person h2 { font:600 30px/1.2 Arial,sans-serif; margin:0 0 8px; letter-spacing:-.02em; }
+.contact-redesign .contact-person-studio { font:13px/1.6 Arial,sans-serif; color:#92988e; margin:0 0 25px; }
+.contact-person dl { margin:0; }
+.contact-person dl div + div { margin-top:20px; }
+.contact-person dt { color:#92988e; font:12px/1.5 Arial,sans-serif; margin-bottom:7px; }
+.contact-person dd { margin:0; font:600 15px/1.6 Arial,sans-serif; overflow-wrap:anywhere; }
+.contact-person dd a:hover { color:#c9a64f; }
+.contact-discord { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #ffffff20; padding-top:22px; margin-top:28px; color:#c9a64f; font:700 13px/1.6 Arial,sans-serif; }
+.contact-redesign .contact-form { margin:0; max-width:none; padding:0; border:0; background:none; border-radius:0; gap:12px; }
+.contact-redesign .contact-form label { font:600 13px/1.6 Arial,sans-serif; margin-top:10px; }
+.contact-redesign .contact-form input,.contact-redesign .contact-form textarea { padding:16px; border:1px solid #ffffff25; border-radius:0; font:15px/1.6 Arial,sans-serif; background:#17191b; color:#f3f1ea; }
+.contact-redesign .contact-form textarea { min-height:220px; }
+.contact-redesign .contact-form button { align-self:flex-start; border-radius:0; padding:16px 28px; font:700 13px/1.6 Arial,sans-serif; margin-top:15px; }
+.contact-redesign :focus-visible { outline:2px solid #c9a64f; outline-offset:4px; }
+@media(max-width:1000px) { .contact-layout { gap:40px; } }
+@media(max-width:760px) { .contact-redesign { padding-block:125px 70px; } .contact-layout { grid-template-columns:1fr; gap:45px; } .contact-person { max-width:480px; } .contact-redesign .contact-lead { margin-bottom:35px; } }
+#contact-message { scroll-margin-top: 110px; }
