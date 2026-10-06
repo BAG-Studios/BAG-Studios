@@ -707,3 +707,20 @@ a {
     .article-section { margin-top: 45px; } .blog-heading { margin-bottom: 40px; }
     .hero { margin-top: 120px; } .games-section { padding-top: 160px; }
 }
+/* News archive: compact previews link to separate articles */
+.news-archive { margin-top: 90px; min-height: 72vh; background: #fafafa; color: #202126; position: relative; overflow: hidden; }
+.news-shell { max-width: 1280px; margin: auto; padding: 90px 5% 110px; position: relative; }
+.news-title { font-size: clamp(42px, 5vw, 64px); font-weight: 700; letter-spacing: -1.5px; margin: 0 0 90px; }
+.news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.news-meta { display: flex; justify-content: space-between; gap: 12px; padding: 0 8px 10px; font-size: 12px; line-height: 1.4; text-transform: uppercase; }
+.news-meta time { white-space: nowrap; }
+.news-card { display: flex; flex-direction: column; padding: 28px 24px; min-height: 420px; background: #202126; color: #fff; border-radius: 8px; transition: transform .2s, box-shadow .2s; }
+.news-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px #0002; }
+.news-card:focus-visible { outline: 3px solid #c9a64f; outline-offset: 5px; }
+.news-card h3 { font-size: 26px; line-height: 1.2; text-align: center; min-height: 94px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.news-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 24px; }
+.news-card p { line-height: 1.6; font-size: 16px; margin: 0 0 24px; }
+.news-read { display: flex; justify-content: space-between; font-size: 14px; color: #e1c57b; margin-top: auto; font-weight: bold; }
+.article-back { display: inline-block; margin-bottom: 38px; color: #c9a64f; }
+@media (max-width: 1000px) { .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .news-archive { margin-top: 120px; } .news-shell { padding: 50px 6% 70px; } .news-title { margin-bottom: 45px; } .news-grid { grid-template-columns: 1fr; } .news-card h3 { min-height: 0; } }
