@@ -821,3 +821,7 @@ a {
 .home-page .hero { height: 100svh; min-height: 800px; max-height: 1120px; background-position: center 35%; }
 @media(min-width:1700px) { .home-page .hero { background-position: center 42%; } }
 @media(max-width:760px) { .home-page .hero { height: 850px; min-height: 740px; max-height: none; background-position: 61% center; } }
+
+/* Studio label above the Home title. */
+.home-page .hero-eyebrow { color: #c9a64f; font: 700 11px/1.5 Arial,sans-serif; letter-spacing: .15em; margin-bottom: 27px; }
+@media(max-width:760px) { .home-page .hero-eyebrow { font-size: 9px; letter-spacing: .11em; margin-bottom: 25px; } }
