@@ -33,3 +33,22 @@
 #studio-team{padding-bottom:65px}}
 @media(max-width:400px){#studio-team .studio-grid{grid-template-columns:1fr}
 #studio-team .member-photo{height:370px}}
+/* Studio introduction: clear hierarchy, balanced copy and original artwork. */
+.studio-intro { padding-block: 160px 90px; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(40px,6vw,100px); border-bottom: 0; }
+.studio-intro .studio-intro-label { font: 700 10px/1.6 Arial,sans-serif; letter-spacing: .16em; color: #c9a64f; margin: 0 0 24px; }
+.studio-intro h1 { font: 650 clamp(48px,5.2vw,76px)/1.04 Studio,Arial,sans-serif; letter-spacing: -.045em; margin: 0 0 30px; }
+.studio-intro h1 span { color: #c9a64f; }
+.studio-intro .studio-intro-description { font: 18px/1.8 Arial,sans-serif; color: #babbb9; max-width: 520px; margin: 0; }
+.studio-intro-details { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; border-top: 1px solid #ffffff20; padding-top: 25px; margin-top: 36px; }
+.studio-intro-details strong { display: block; color: #f3f1ea; font: 600 23px/1.2 Studio,Arial,sans-serif; }
+.studio-intro-details span { display: block; margin-top: 9px; color: #92988e; font: 11px/1.5 Arial,sans-serif; }
+.studio-intro-link { display: inline-flex; align-items: center; gap: 45px; margin-top: 35px; font: 700 13px/1.6 Arial,sans-serif; color: #f3f1ea; }
+.studio-intro-link:hover { color: #c9a64f; }
+.studio-intro-link:focus-visible { outline: 2px solid #c9a64f; outline-offset: 6px; }
+.studio-intro-art { margin: 0; min-width: 0; }
+.studio-intro .studio-intro-art img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; display: block; border: 1px solid #ffffff15; }
+.studio-intro-art figcaption { display: flex; justify-content: space-between; gap: 15px; margin-top: 16px; color: #94988f; font: 10px/1.5 Arial,sans-serif; }
+.studio-intro-art figcaption span:first-child { letter-spacing: .1em; }
+#studio-team { scroll-margin-top: 100px; }
+@media(max-width:900px) { .studio-intro { gap: 35px; } .studio-intro .studio-intro-description { font-size: 16px; } }
+@media(max-width:760px) { .studio-intro { grid-template-columns: 1fr; padding-block: 120px 60px; gap: 45px; } .studio-intro h1 { font-size: clamp(48px,11vw,64px); } .studio-intro-details { gap: 15px; } .studio-intro-art { max-width: 520px; } }
