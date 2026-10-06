@@ -693,7 +693,7 @@ a {
 .site-header nav a { padding: 10px 0; color: #ddd; transition: color .2s; }
 .site-header nav a:hover, .site-header nav a[aria-current] { color: #c9a64f; }
 .site-menu-button { display: none; }
-.home-page.navbar-at-top .site-header:not(.menu-open) { background: transparent; border-bottom-color: transparent; backdrop-filter: none; padding-block: 23px; }
+.home-page.navbar-at-top .site-header:not(.menu-open) { background: transparent; border-bottom-color: transparent; backdrop-filter: none; padding-block: 16px; }
 .site-header a:focus-visible, .site-menu-button:focus-visible { outline: 2px solid #c9a64f; outline-offset: 6px; }
 @media(max-width:1100px) { .site-header { padding-inline: 32px; } .site-header nav { gap: 22px; } }
 @media(max-width:760px) {
