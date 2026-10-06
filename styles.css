@@ -769,3 +769,20 @@ a {
     :root { --site-gutter: 24px; }
     .site-header, .home-page.navbar-at-top .site-header:not(.menu-open), .site-header nav { padding-inline: var(--site-gutter); }
 }
+
+/* Navigation style matched to the approved reference. */
+.site-header nav { gap: 30px; font-size: 14px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.site-header nav a { position: relative; padding: 12px 0; color: #d8d8d2; }
+.site-header nav a:not(.nav-discord)::after { content: ''; position: absolute; left: 0; right: 0; bottom: 4px; height: 2px; background: #c9a64f; transform: scaleX(0); transform-origin: left; transition: transform .2s; }
+.site-header nav a:not(.nav-discord):hover::after, .site-header nav a[aria-current]::after { transform: scaleX(1); }
+.site-header nav a[aria-current] { color: #f3f1ea; }
+.site-header .nav-discord { margin-left: 6px; padding-left: 24px; border-left: 1px solid #ffffff30; }
+.site-header .nav-discord img { width: 25px; height: 25px; }
+@media(max-width:1100px) { .site-header nav { gap: 23px; } }
+@media(max-width:760px) {
+ .site-header nav { gap: 6px; }
+ .site-header nav a { font-size: 17px; padding: 15px 0; }
+ .site-header nav a:not(.nav-discord)::after { right: auto; width: 30px; bottom: 8px; }
+ .site-header .nav-discord { margin-left: 0; padding: 20px 0 8px; border-left: 0; border-top: 1px solid #ffffff20; margin-top: 14px; }
+}
+@media(prefers-reduced-motion:reduce) { .site-header nav a::after { transition: none; } }
