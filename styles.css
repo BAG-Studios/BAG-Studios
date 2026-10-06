@@ -691,13 +691,11 @@ a {
 .site-brand-light { font-weight: 400; }
 .site-header nav { display: flex; align-items: center; gap: 34px; font: 13px/1.6 Arial, sans-serif; }
 .site-header nav a { padding: 10px 0; color: #ddd; transition: color .2s; }
-.site-header nav a:hover, .site-header nav a[aria-current] { color: #c8d69c; }
-.site-header nav .site-nav-contact { margin-left: 18px; border: 1px solid #ffffff35; padding: 10px 17px; color: #fff; display: flex; gap: 25px; }
-.site-header nav .site-nav-contact:hover { border-color: #c8d69c; color: #c8d69c; }
+.site-header nav a:hover, .site-header nav a[aria-current] { color: #c9a64f; }
 .site-menu-button { display: none; }
 .home-page.navbar-at-top .site-header:not(.menu-open) { background: transparent; border-bottom-color: transparent; backdrop-filter: none; padding-block: 23px; }
-.site-header a:focus-visible, .site-menu-button:focus-visible { outline: 2px solid #c8d69c; outline-offset: 6px; }
-@media(max-width:1100px) { .site-header { padding-inline: 32px; } .site-header nav { gap: 22px; } .site-header nav .site-nav-contact { margin-left: 0; } }
+.site-header a:focus-visible, .site-menu-button:focus-visible { outline: 2px solid #c9a64f; outline-offset: 6px; }
+@media(max-width:1100px) { .site-header { padding-inline: 32px; } .site-header nav { gap: 22px; } }
 @media(max-width:760px) {
     .site-header, .home-page.navbar-at-top .site-header:not(.menu-open) { padding: 14px 20px; }
     .site-brand { font-size: 16px; gap: 10px; }
@@ -707,7 +705,6 @@ a {
     .site-header nav { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 30px 20px; background: #111214; border-bottom: 1px solid #ffffff25; flex-direction: column; gap: 10px; align-items: stretch; }
     .site-header nav.open { display: flex; }
     .site-header nav a { font-size: 20px; padding: 14px 0; }
-    .site-header nav .site-nav-contact { margin-top: 12px; font-size: 14px; }
     .site-header.menu-open { background: #111214; }
 }
 @media(prefers-reduced-motion:reduce) { .site-header, .site-header nav a { transition: none; } }
@@ -732,3 +729,6 @@ a {
     .home-page .hero-content { width: 100%; }
     .home-page .hero-content h2 { font-size: clamp(40px, 10.5vw, 60px); }
 }
+.site-header nav .nav-discord { display: flex; align-items: center; }
+.site-header .nav-discord img { width: 24px; height: 24px; object-fit: contain; }
+.site-header .nav-discord:hover img { opacity: .75; }
