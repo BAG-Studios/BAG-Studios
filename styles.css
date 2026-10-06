@@ -840,3 +840,5 @@ html { scroll-behavior: smooth; }
 @media(max-width:760px) { .home-page .hero-bottom { bottom: 25px; padding-top: 18px; } .home-page .hero-bottom > a { font-size: 8px; white-space: nowrap; } .home-page .hero-bottom strong { font-size: 11px; } }
 @media(max-width:400px) { .home-page .hero-bottom > a { white-space: normal; max-width: 90px; } .home-page .hero-bottom > span { max-width: 230px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+
+.home-page .hero-content h2 .hero-studios { color: #c9a64f; }
