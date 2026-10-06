@@ -28,14 +28,14 @@
 .home-page #home-main .section-top h2{margin-top:14px}
 .home-page #home-main .section-top .meta{color:#aaa}
 .home-page #home-main .featured{border-top:0;padding-top:35px;padding-bottom:120px;scroll-margin-top:130px}
-.home-page #home-main .game-feature{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.home-page #home-main .game-art{height:660px;overflow:hidden;position:relative}
-.home-page #home-main .game-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.home-page #home-main .game-feature{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
+.home-page #home-main .game-art{height:auto;min-height:0;overflow:hidden;position:relative}
+.home-page #home-main .game-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .home-page #home-main .game-feature:hover .game-art img{transform:scale(1.025)}
 .home-page #home-main .image-label{position:absolute;left:22px;bottom:20px;color:#fff;z-index:1}
 .home-page #home-main .game-art:after,.home-page #home-main .news-image:after{content:'';position:absolute;inset:60% 0 0;background:linear-gradient(transparent,#0008);pointer-events:none}
 .home-page #home-main .atira-title{font-family:Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:-.06em;font-weight:750}
-.home-page #home-main .game-copy .atira-title{font-size:105px;margin-top:28px}
+.home-page #home-main .game-copy .atira-title{font-size:105px;margin-top:0}
 .home-page #home-main .subtitle{color:#f3f1ea;letter-spacing:.3em;margin-top:2px}
 .home-page #home-main .game-copy>.subtitle{margin-bottom:40px}
 .home-page #home-main .game-copy>p:not(.eyebrow):not(.subtitle):not(.fineprint){max-width:480px;font-size:17px}
@@ -51,7 +51,7 @@
 .home-page #home-main .news-copy>p:not(.meta){max-width:440px}
 .home-page #home-main .news-copy .text-link{margin-top:30px}
 @media(max-width:1100px){.home-page #home-main .game-feature{gap:40px}
-.home-page #home-main .game-art{height:600px}
+.home-page #home-main .game-art{height:auto}
 .home-page #home-main .game-copy .atira-title{font-size:90px}
 .home-page #home-main .news-feature{gap:35px}
 .home-page #home-main .news-copy h3{font-size:37px}}
@@ -73,3 +73,4 @@
 .home-page #home-main .news-copy h3{font-size:37px;margin:18px 0}
 .home-page #home-main .news-copy .text-link{margin-top:20px}}
 @media(max-width:400px){.home-page #home-main .game-copy .actions{align-items:start;flex-direction:column}}
+.home-page #home-main .game-copy > .fineprint{margin-bottom:0}
