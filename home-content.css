@@ -40,7 +40,7 @@
 .home-page #home-main .game-copy>.subtitle{margin-bottom:40px}
 .home-page #home-main .game-copy>p:not(.eyebrow):not(.subtitle):not(.fineprint){max-width:480px;font-size:17px}
 .home-page #home-main .game-copy .actions{gap:25px}
-.home-page #home-main .news-section{border-top:1px solid #ffffff20;padding:36px 0 100px}
+.home-page #home-main .news-section{border-top:1px solid #ffffff06;padding:36px 0 100px}
 .home-page #home-main .news-feature{display:grid;grid-template-columns:1.45fr 1fr;gap:60px;align-items:center}
 .home-page #home-main .news-image{position:relative;height:420px;overflow:hidden}
 .home-page #home-main .news-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}

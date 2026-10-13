@@ -2,7 +2,7 @@
 .games-showcase { padding:145px var(--site-gutter) 90px; color:#f3f1ea; }
 .games-heading { margin-bottom:35px; }
 .games-heading h1 { font:650 clamp(40px,4vw,56px)/1.1 Studio,Arial,sans-serif; letter-spacing:-.04em; margin:0; }
-.games-feature { display:grid; grid-template-columns:260px 1fr; max-width:900px; background:#17191b; border:1px solid #ffffff18; color:inherit; text-decoration:none; transition:transform .25s ease, border-color .25s ease, background-color .25s ease, box-shadow .25s ease; }
+.games-feature { display:grid; grid-template-columns:260px 1fr; max-width:900px; background:#17191b; border:1px solid #ffffff06; color:inherit; text-decoration:none; transition:transform .25s ease, border-color .25s ease, background-color .25s ease, box-shadow .25s ease; }
 .games-art { position:relative; overflow:hidden; min-height:260px; }
 .games-art img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; }
 .games-feature:hover { transform:translateY(-4px); border-color:#c9a64f80; background:#1c1e20; box-shadow:0 12px 28px #0003; }
