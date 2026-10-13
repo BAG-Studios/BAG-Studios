@@ -798,7 +798,7 @@ a {
 .site-footer { padding-top: 70px; }
 .site-footer .brand { display: flex; align-items: center; gap: 14px; font: 750 19px/1 Arial,sans-serif; letter-spacing: .015em; }
 .site-footer .brand img { width: 46px; height: 43px; object-fit: contain; }
-.site-footer .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 50px; }
+.site-footer .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 50px; }
 .site-footer .footer-top p { margin-top: 28px; font: 14px/1.8 Arial,sans-serif; color: #babbb9; }
 .site-footer .footer-top h3 { font: 11px/1.5 Arial,sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #a8aaa3; margin-bottom: 22px; }
 .site-footer .footer-top > div > a:not(.brand) { display: block; width: fit-content; font: 13px/1.6 Arial,sans-serif; margin-bottom: 10px; }
