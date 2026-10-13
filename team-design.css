@@ -6,6 +6,7 @@
 #studio-team p { color:#babbb9; }
 #studio-team img { display:block; max-width:100%; height:auto; }
 #studio-team .member-photo img { width:100%; height:100%; }
+#studio-team .member-photo img[src="Images/Lucas-suit.png"] { object-position: 50% 25%; }
 @font-face{font-family:Studio;src:local('Bahnschrift');font-display:swap}
 #studio-team .eyebrow,#studio-team .meta{font:11px/1.5 Arial,sans-serif;letter-spacing:.15em;font-weight:700}
 #studio-team .eyebrow{color:#c9a64f}
