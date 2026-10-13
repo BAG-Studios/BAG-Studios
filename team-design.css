@@ -48,7 +48,7 @@
 .studio-intro-link:focus-visible { outline: 2px solid #c9a64f; outline-offset: 6px; }
 .studio-intro-art { margin: 0; min-width: 0; }
 .studio-intro .studio-intro-art img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; display: block; border: 0; }
-.studio-intro-art figcaption { display: flex; justify-content: space-between; gap: 15px; margin-top: 16px; color: #94988f; font: 10px/1.5 Arial,sans-serif; }
+.studio-intro-art figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; margin-top: 12px; padding-inline: 3.5%; color: #a5a89f; font: 11px/1.5 Arial,sans-serif; }
 .studio-intro-art figcaption span:first-child { letter-spacing: .1em; }
 #studio-team { scroll-margin-top: 100px; }
 @media(max-width:900px) { .studio-intro { gap: 35px; } .studio-intro .studio-intro-description { font-size: 16px; } }
