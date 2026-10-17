@@ -105,3 +105,5 @@
 .home-page #home-main .game-copy .actions{margin-top:4px;padding-top:0}
 .home-page #home-main .news-copy .story-button{margin-top:4px}
 }
+
+.home-page #home-main .game-copy>p:not(.subtitle){color:#f3f1ea}
