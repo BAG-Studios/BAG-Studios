@@ -81,8 +81,6 @@
 .atira-page #main .video-preview{height:300px}
 .atira-page #main .play-circle{width:60px;height:60px;font-size:16px}
 .atira-page #main .video-caption{bottom:18px;left:20px;right:20px;font-size:12px}}
-/* Full-screen artwork with the shared header clear at the top. */
-.atira-page .site-header:not(.scrolled):not(.menu-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
 .atira-page #main .game-hero{height:auto;min-height:100svh;display:flex;align-items:center;box-sizing:border-box;padding-block:130px 80px}
 .atira-page #main .game-hero-copy{padding-top:0}
 @media(max-width:760px){.atira-page #main .game-hero{padding-block:120px 60px}}
@@ -114,81 +112,12 @@
 .atira-page #main .game-hero .game-title-subtitle{margin:12px 0 0;line-height:1.3;letter-spacing:.055em}
 .atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){margin:0;line-height:1.6}
 .atira-page #main .game-hero .actions{margin-top:28px}
-/* Slim game-page navigation inspired by the trailer reference. */
-.atira-page .site-header{padding-block:16px;border-bottom-color:#ffffff15}
-.atira-page .site-header nav{gap:26px;font:600 12px/1.5 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.16em}
-.atira-page .site-header nav a{color:#aaaab2;padding-block:10px}
-.atira-page .site-header nav a:hover,.atira-page .site-header nav a[aria-current]{color:#fff}
-.atira-page .site-header nav a:not(.nav-discord):not(.nav-patreon)::after{height:1px;background:#b0191d;bottom:4px}
-.atira-page .site-header nav .nav-demo{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 22px;margin-left:12px;border:1px solid #c22529;border-radius:4px;background:#b0191d;color:#fff;white-space:nowrap;letter-spacing:.12em;box-sizing:border-box;transition:background .2s}
-.atira-page .site-header nav .nav-demo::after{display:none}
-.atira-page .site-header nav .nav-demo:hover{background:#ce2328}
-.atira-page .site-header .nav-discord{padding-left:18px}
-.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{width:21px;height:21px}
-@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{gap:16px;letter-spacing:.1em}.atira-page .site-header nav .nav-demo{margin-left:0;padding-inline:14px}.atira-page .site-header .site-brand{font-size:16px;gap:10px}.atira-page .site-header .nav-discord{padding-left:12px}}
-@media(max-width:760px){.atira-page .site-header{padding-block:14px}.atira-page .site-header nav{gap:6px;font-size:15px}.atira-page .site-header nav a{padding-block:14px}.atira-page .site-header nav .nav-demo{align-self:flex-start;margin:16px 0 0;padding:12px 24px}.atira-page .site-header .nav-discord{padding:20px 0 8px}}
 /* Compact title lockup, with a quieter introduction beneath it. */
 .atira-page #main .game-hero-copy>.eyebrow{margin-bottom:14px}
 .atira-page #main .game-hero h1{line-height:.9;margin-bottom:26px}
 .atira-page #main .game-hero .game-title-subtitle{margin-top:8px;line-height:1.25;letter-spacing:.04em}
 .atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){color:#b4b4b8;line-height:1.65}
 .atira-page #main .game-hero .actions{margin-top:30px}
-/* Keep the four main links centered independently of the brand and actions. */
-@media(min-width:1101px){
-.atira-page .site-header nav{position:static}
-.atira-page .site-header nav>a:nth-child(-n+4){position:absolute;top:50%;transform:translateY(-50%);width:84px;text-align:center}
-.atira-page .site-header nav>a:nth-child(1){left:calc(50% - 168px)}
-.atira-page .site-header nav>a:nth-child(2){left:calc(50% - 84px)}
-.atira-page .site-header nav>a:nth-child(3){left:50%}
-.atira-page .site-header nav>a:nth-child(4){left:calc(50% + 84px)}
-.atira-page .site-header nav>a:nth-child(-n+4)::after{left:16px;right:16px}
-}
-/* Refined studio signature for the game-page header. */
-.atira-page .site-header .site-brand{gap:12px;font:750 21px/1 Studio,Arial,sans-serif;letter-spacing:.035em;white-space:nowrap;color:#f3f1ea;text-shadow:0 1px 10px #0006}
-.atira-page .site-header .site-brand>img{width:36px;height:36px;object-fit:contain;opacity:.95}
-.atira-page .site-header .site-brand>span{display:flex;align-items:baseline;gap:7px}
-.atira-page .site-header .site-brand-light{font:500 11px/1 Studio,Arial,sans-serif;letter-spacing:.22em;color:#c5c5ca}
-.atira-page .site-header .site-brand:hover .site-brand-light{color:#fff}
-@media(max-width:1100px){.atira-page .site-header .site-brand{font-size:19px;gap:10px}.atira-page .site-header .site-brand>img{width:32px;height:32px}.atira-page .site-header .site-brand-light{font-size:10px;letter-spacing:.17em}}
-/* Improve the header's size and readability. */
-@media(min-width:1101px){
-.atira-page .site-header{padding-block:20px;min-height:88px;box-sizing:border-box}
-.atira-page .site-header nav{font-size:15px;gap:28px}
-.atira-page .site-header .site-brand{font-size:25px;gap:14px}
-.atira-page .site-header .site-brand>img{width:44px;height:44px}
-.atira-page .site-header .site-brand-light{font-size:13px}
-.atira-page .site-header nav>a:nth-child(-n+4){width:100px}
-.atira-page .site-header nav>a:nth-child(1){left:calc(50% - 200px)}
-.atira-page .site-header nav>a:nth-child(2){left:calc(50% - 100px)}
-.atira-page .site-header nav>a:nth-child(3){left:50%}
-.atira-page .site-header nav>a:nth-child(4){left:calc(50% + 100px)}
-.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{width:26px;height:26px}
-.atira-page .site-header nav .nav-demo{font-size:14px;min-height:48px;padding:13px 26px}
-}
-@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{font-size:14px}.atira-page .site-header .site-brand{font-size:21px}.atira-page .site-header .site-brand>img{width:36px;height:36px}}
-/* Stronger primary navigation labels. */
-@media(min-width:1101px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:18px;font-weight:750;letter-spacing:.12em}}
-@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:16px;font-weight:750;letter-spacing:.08em}}
-@media(max-width:760px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:18px;font-weight:750}}
-/* Match the active marker to each label instead of its navigation slot. */
-@media(min-width:1101px){
-.atira-page .site-header nav>a:nth-child(-n+4){width:max-content}
-.atira-page .site-header nav>a:nth-child(1){left:calc(50% - 150px);transform:translate(-50%,-50%)}
-.atira-page .site-header nav>a:nth-child(2){left:calc(50% - 50px);transform:translate(-50%,-50%)}
-.atira-page .site-header nav>a:nth-child(3){left:calc(50% + 50px);transform:translate(-50%,-50%)}
-.atira-page .site-header nav>a:nth-child(4){left:calc(50% + 150px);transform:translate(-50%,-50%)}
-.atira-page .site-header nav>a:nth-child(-n+4)::after{left:0;right:0;bottom:3px;height:1px;background:#c3262b}
-}
-.atira-page .site-header nav>a:nth-child(-n+4)::after{height:2px;bottom:8px}
-
-/* Align every header element around one vertical center. */
-.atira-page .site-header .site-brand>span{align-items:center}
-@media(min-width:761px){
-.atira-page .site-header,.atira-page .site-header nav,.atira-page .site-header .site-brand{align-items:center}
-.atira-page .site-header nav>a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;line-height:1;padding-block:10px}
-.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{display:block}
-.atira-page .site-header .site-brand,.atira-page .site-header .site-brand-light{line-height:1}
-}
 /* Painted slash accents layered over the untouched artwork. */
 .atira-page #main .feature-visual{position:relative;border-radius:0;isolation:isolate;box-shadow:none;clip-path:polygon(0 .8%,18% 0,46% .4%,78% 0,99.7% .7%,100% 35%,99.6% 70%,100% 99.2%,73% 100%,41% 99.5%,.4% 100%,0 66%,.3% 31%)}
 .atira-page #main .feature-visual::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 22px #0003}
