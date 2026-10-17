@@ -1,0 +1,31 @@
+/* Demo Day story, using the shared studio typography and palette. */
+:root body .editorial-page.blog-page{margin:0;padding:136px var(--site-gutter) 72px;color:var(--site-white)}
+.blog-page .article-back{margin-bottom:40px;color:#929296;font:13px/1.6 Arial,sans-serif;text-decoration:none}
+.blog-page .article-back:hover{color:var(--site-white)}
+.event-heading{max-width:900px}
+.event-article .event-meta{display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 22px;color:#e04349;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.15em}
+.event-meta time{color:#989b92}
+.event-heading h1{font:650 clamp(44px,5.6vw,76px)/1.05 Studio,Arial,sans-serif;letter-spacing:-.045em;margin:0 0 26px}
+.event-article .event-heading .lead{max-width:760px;font:19px/1.7 Arial,sans-serif;color:#babbb9;margin:0}
+.event-article figure{margin:0}
+.event-article .event-cover{margin:42px 0 64px}
+.event-article figure img{display:block;width:100%;height:auto;max-height:none;background:none}
+.event-article figcaption{font:11px/1.6 Arial,sans-serif;color:#929296;opacity:1;margin-top:12px}
+.event-story{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:80px;align-items:start}
+.event-story .article-copy{max-width:680px;margin:0}
+.event-story .article-copy section+section{margin-top:36px}
+.event-article h2{font:650 clamp(26px,2.5vw,34px)/1.12 Studio,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 18px}
+.event-article .article-copy p{font:17px/1.8 Arial,sans-serif;color:#babbb9;margin:0 0 18px}
+.event-story .event-playtest{margin:0}
+.event-article .event-next{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-top:56px;padding-top:36px;border-top:1px solid #ffffff18}
+.event-next .eyebrow{font:700 10px/1.5 Arial,sans-serif;letter-spacing:.15em;margin:0 0 14px}
+.event-next h2{margin-bottom:14px}
+.event-next p:not(.eyebrow){font:16px/1.7 Arial,sans-serif;color:#babbb9;margin:0;max-width:540px}
+.event-next .page-actions{flex-shrink:0;align-items:flex-start;flex-direction:column;gap:18px;margin:0}
+.event-game-link{font:13px/1.6 Arial,sans-serif;color:var(--site-white);text-decoration:none}
+.event-game-link:hover{text-decoration:underline;text-underline-offset:4px}
+.event-social{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:36px;font:12px/1.6 Arial,sans-serif;color:#929296}
+.event-social a{color:#babbb9;text-decoration:none}
+.event-social a:hover{color:var(--site-white)}
+@media(max-width:1100px){.event-story{gap:40px}}
+@media(max-width:760px){:root body .editorial-page.blog-page{padding-top:110px;padding-bottom:48px}.blog-page .article-back{margin-bottom:28px}.event-heading h1{font-size:44px}.event-article .event-heading .lead{font-size:17px}.event-article .event-cover{margin:30px 0 36px}.event-story{grid-template-columns:minmax(0,1fr);gap:28px}.event-story .event-playtest{max-width:480px}.event-article .article-copy p{font-size:16px}.event-article .event-next{flex-direction:column;align-items:flex-start;margin-top:36px;padding-top:28px;gap:24px}.event-next .page-actions{flex-direction:row;align-items:center;gap:20px}.event-social{gap:12px 18px}}
