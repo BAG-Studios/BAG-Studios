@@ -81,3 +81,8 @@
 .atira-page #main .video-preview{height:300px}
 .atira-page #main .play-circle{width:60px;height:60px;font-size:16px}
 .atira-page #main .video-caption{bottom:18px;left:20px;right:20px;font-size:12px}}
+/* Full-screen artwork with the shared header clear at the top. */
+.atira-page .site-header:not(.scrolled):not(.menu-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
+.atira-page #main .game-hero{height:auto;min-height:100svh;display:flex;align-items:center;box-sizing:border-box;padding-block:130px 80px}
+.atira-page #main .game-hero-copy{padding-top:0}
+@media(max-width:760px){.atira-page #main .game-hero{padding-block:120px 60px}}
