@@ -180,3 +180,12 @@
 .atira-page .site-header nav>a:nth-child(-n+4)::after{left:0;right:0;bottom:3px;height:1px;background:#c3262b}
 }
 .atira-page .site-header nav>a:nth-child(-n+4)::after{height:2px;bottom:8px}
+
+/* Align every header element around one vertical center. */
+.atira-page .site-header .site-brand>span{align-items:center}
+@media(min-width:761px){
+.atira-page .site-header,.atira-page .site-header nav,.atira-page .site-header .site-brand{align-items:center}
+.atira-page .site-header nav>a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;line-height:1;padding-block:10px}
+.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{display:block}
+.atira-page .site-header .site-brand,.atira-page .site-header .site-brand-light{line-height:1}
+}
