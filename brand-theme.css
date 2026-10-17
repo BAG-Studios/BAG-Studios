@@ -145,3 +145,20 @@
 :root body .site-footer .footer-bottom{border-top:0}
 
 :root body .site-footer .footer-top .brand,:root body .site-footer .brand .site-brand-light{color:#929296}
+
+/* Compact footer with closely grouped navigation. */
+:root body .site-footer.wrap{margin-top:56px;padding-top:40px}
+:root body .site-footer .footer-top{grid-template-columns:1.1fr 1.5fr 1fr;gap:48px;align-items:start}
+:root body .site-footer .footer-top p{margin-top:16px;font-size:13px;line-height:1.6}
+:root body .site-footer .footer-top h3{width:100%;margin:0 0 14px;font-size:10px;line-height:1.4}
+:root body .site-footer .footer-top>div:not(:first-child){display:flex;flex-wrap:wrap;align-content:start;gap:8px 20px}
+:root body .site-footer .footer-top>div>a:not(.brand){display:inline-flex;align-items:center;gap:4px;margin:0;font-size:13px;line-height:1.7}
+:root body .site-footer .footer-bottom{margin-top:28px;padding:0 0 24px;font-size:10px}
+@media(max-width:760px){
+:root body .site-footer.wrap{margin-top:40px;padding-top:32px}
+:root body .site-footer .footer-top{grid-template-columns:1fr 1fr;gap:26px 24px}
+:root body .site-footer .footer-top>div:first-child{grid-column:1/-1}
+:root body .site-footer .footer-top>div:not(:first-child){gap:8px 14px}
+:root body .site-footer .footer-top h3{margin-bottom:6px}
+:root body .site-footer .footer-bottom{margin-top:24px}
+}
