@@ -43,3 +43,22 @@ if (siteHeader && menuButton && siteNavigation) {
         if (event.matches) closeMenu();
     });
 }
+
+// Enhance the invitation with current public server counts; keep the link usable offline.
+const discordInvite = document.querySelector('[data-discord-invite]');
+if (discordInvite) {
+    fetch('https://discord.com/api/v10/invites/' + encodeURIComponent(discordInvite.dataset.discordInvite) + '?with_counts=true', { signal: AbortSignal.timeout(6000) })
+        .then(response => {
+            if (!response.ok) throw new Error('Discord invite unavailable');
+            return response.json();
+        })
+        .then(invite => {
+            if (invite.guild?.name) discordInvite.querySelector('.discord-server-name').textContent = invite.guild.name;
+            if (Number.isFinite(invite.approximate_presence_count) && Number.isFinite(invite.approximate_member_count)) {
+                discordInvite.querySelector('[data-discord-online]').textContent = invite.approximate_presence_count.toLocaleString();
+                discordInvite.querySelector('[data-discord-members]').textContent = invite.approximate_member_count.toLocaleString();
+                discordInvite.querySelector('.discord-server-stats').hidden = false;
+            }
+        })
+        .catch(() => {});
+}

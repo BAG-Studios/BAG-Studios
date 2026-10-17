@@ -104,3 +104,21 @@
 :root body .site-footer.wrap{width:100%;box-sizing:border-box;margin:80px 0 0;padding:70px var(--site-gutter) 0;background:#09090b;border-top:1px solid #ffffff26}
 :root body .site-footer .footer-bottom{border-top-color:#ffffff18}
 @media(max-width:760px){:root body .site-footer.wrap{margin-top:56px;padding-top:48px}}
+
+/* A server invitation card, using the community's real Discord identity. */
+:root body .community.wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+:root body .community .community-reasons{margin-bottom:0}
+:root body .community .discord-invite{width:100%;max-width:420px;box-sizing:border-box;padding:32px;background:#232428;border:1px solid #ffffff0e;border-radius:10px;text-align:center;box-shadow:0 16px 48px #0003}
+:root body .community .discord-server-icon{display:block;width:64px;height:64px;object-fit:cover;border-radius:16px;margin:0 auto 14px}
+:root body .community .discord-invite-label{font:14px/1.5 Arial,sans-serif;color:#c4c5c9;margin:0 0 10px}
+:root body .community .discord-server-name{font:600 23px/1.3 Studio,Arial,sans-serif;letter-spacing:-.02em;color:#fff;margin:0 0 14px}
+:root body .community .discord-server-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:24px;color:#d2d3d7;font:12px/1.5 Arial,sans-serif}
+:root body .community .discord-server-stats[hidden]{display:none}
+:root body .discord-server-stats>span{display:inline-flex;align-items:center;gap:4px}
+:root body .discord-server-stats i{display:block;width:9px;height:9px;border-radius:50%;background:#b5bac1;margin-right:2px}
+:root body .discord-server-stats .discord-online i{background:#43b581}
+:root body .community .discord-invite-button{width:100%;margin-top:8px}
+:root body .community .discord-invite .community-note{font-size:9px;letter-spacing:.06em}
+@media(max-width:1000px){:root body .community.wrap{gap:32px;padding:36px}:root body .community .discord-invite{padding:28px 20px}}
+@media(max-width:850px){:root body .community.wrap{grid-template-columns:minmax(0,1fr)}:root body .community-art{grid-row:auto}:root body .community-copy{max-width:none}}
+@media(max-width:760px){:root body .community.wrap{padding:30px 24px}:root body .community .discord-server-name{font-size:21px}}
