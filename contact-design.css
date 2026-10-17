@@ -24,3 +24,8 @@
 @media(max-width:1000px) { .contact-layout { gap:40px; } }
 @media(max-width:760px) { .contact-redesign { padding-block:125px 70px; } .contact-layout { grid-template-columns:1fr; gap:45px; } .contact-person { max-width:480px; } .contact-redesign .contact-lead { margin-bottom:35px; } }
 #contact-message { scroll-margin-top: 110px; }
+
+/* Keep the contact details open, framing only the portrait. */
+.contact-person{background:transparent;border:0;border-radius:0;overflow:visible}
+.contact-person-body{padding:0}
+.contact-person img{box-sizing:border-box;border:1px solid #777a7e99;border-radius:12px}
