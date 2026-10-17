@@ -1,5 +1,5 @@
 /* ATIRA content styles from the approved preview; header/footer use shared styles. */
-.atira-page { background:#111214; color:#f3f1ea; }
+.atira-page { background:var(--base-color); color:#f3f1ea; }
 .atira-page #main { font:16px/1.6 Arial,Helvetica,sans-serif; }
 .atira-page #main h1,.atira-page #main h2,.atira-page #main h3 { font-family:Studio,Arial,sans-serif; line-height:1.04; letter-spacing:-.045em; font-weight:650; }
 .atira-page #main h2 { font-size:clamp(36px,4.2vw,64px); }
@@ -30,7 +30,7 @@
 .atira-page #main .subtitle{color:#f3f1ea;letter-spacing:.3em;margin-top:2px}
 .atira-page #main .game-hero{height:850px;position:relative;isolation:isolate;overflow:hidden}
 .atira-page #main .game-hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transform:none;z-index:-3}
-.atira-page #main .game-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0e1011dd 15%,#0e101130 85%),linear-gradient(0deg,#111214,transparent 35%);z-index:-2}
+.atira-page #main .game-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0e1011dd 15%,#0e101130 85%),linear-gradient(0deg,var(--base-color),transparent 35%);z-index:-2}
 .atira-page #main .game-hero-copy{padding-top:260px}
 .atira-page #main .game-hero h1{font-size:170px;margin:18px 0 0}
 .atira-page #main .game-hero .subtitle{font-size:15px;margin-bottom:35px}

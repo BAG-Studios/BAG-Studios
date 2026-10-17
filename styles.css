@@ -9,7 +9,7 @@
 :root{
     color-scheme: dark;
 
-    --base-color: #111;
+    --base-color: #111214;
     --alt-color: #181818;
     --text-color: #ffffff;
     --cardtop-color: #2a2a2a;
@@ -713,7 +713,7 @@ a {
     justify-content: flex-start;
     align-items: center;
     padding: 0 56px;
-    background-image: linear-gradient(90deg, rgba(12,13,14,.95) 0%, rgba(12,13,14,.78) 30%, rgba(12,13,14,.12) 66%, transparent 100%), linear-gradient(0deg, #111 0%, transparent 30%), url("Images/Aelina_chains_image.png");
+    background-image: linear-gradient(90deg, rgba(12,13,14,.95) 0%, rgba(12,13,14,.78) 30%, rgba(12,13,14,.12) 66%, transparent 100%), linear-gradient(0deg, var(--base-color) 0%, transparent 30%), url("Images/Aelina_chains_image.png");
 }
 .home-page .hero-content { width: min(760px, 56vw); }
 .home-page .hero-content h2 {

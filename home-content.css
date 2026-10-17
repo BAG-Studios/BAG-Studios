@@ -1,6 +1,6 @@
 /* Home content from the approved preview, scoped below the existing hero. */
 @font-face { font-family:Studio; src:local('Bahnschrift'); font-display:swap; }
-.home-page #home-main { font:16px/1.6 Arial,Helvetica,sans-serif; background:#111214; color:#f3f1ea; }
+.home-page #home-main { font:16px/1.6 Arial,Helvetica,sans-serif; background:var(--base-color); color:#f3f1ea; }
 .home-page #home-main h2,.home-page #home-main h3 { font-family:Studio,Arial,sans-serif; line-height:1.04; letter-spacing:-.045em; font-weight:650; }
 .home-page #home-main h2 { font-size:clamp(36px,4.2vw,64px); }
 .home-page #home-main h3 { font-size:clamp(28px,3vw,44px); }

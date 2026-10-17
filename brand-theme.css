@@ -165,7 +165,7 @@
 
 /* One page background through the content and community section. */
 :root{--base-color:#111214}
-:root body,:root body .news-archive{background-color:var(--base-color)}
+:root,:root body,:root body main,:root body .news-archive{background-color:var(--base-color)}
 
 /* Keep the community invitation short and focused. */
 :root body .community.wrap{padding-block:28px}
