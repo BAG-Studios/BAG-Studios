@@ -37,3 +37,11 @@
 .contact-redesign .contact-portrait-caption .contact-person-studio{margin:0;color:#d5d5d2}
 .contact-person dl{margin-top:24px}
 @media(max-width:760px){.contact-portrait-caption{padding:56px 20px 20px}}
+
+/* One contact card: a landscape portrait above the contact details. */
+.contact-person{background:#191b1e;border:1px solid #777a7e66;border-radius:10px;overflow:hidden}
+.contact-portrait{aspect-ratio:4/3;border:0;border-radius:0}
+:root body .contact-person .contact-portrait img{aspect-ratio:auto;object-position:50% 42%}
+.contact-person dl{margin:0;padding:24px}
+.contact-person dl div+div{margin-top:18px}
+@media(max-width:760px){.contact-person dl{padding:20px}}
