@@ -194,3 +194,6 @@
 :root body .community .discord-invite .discord-invite-button{background:#5865f2;border-color:#5865f2;color:#fff}
 :root body .community .discord-invite .discord-invite-button:hover{background:#4752c4;border-color:#4752c4;color:#fff}
 :root body .community .discord-invite .discord-invite-button:focus-visible{outline-color:#8891f7}
+
+/* A flat community panel without the red glow. */
+:root body .community.wrap{background:#141517;border-color:#ffffff18;box-shadow:none}
