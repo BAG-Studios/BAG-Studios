@@ -16,8 +16,8 @@
 #studio-team{padding:45px 0 100px}
 #studio-team .studio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px 35px}
 #studio-team .member-photo{height:330px;overflow:hidden;background:#202226}
-#studio-team .member-photo img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-#studio-team .member:hover img{transform:scale(1.025)}
+#studio-team .member-photo img{width:100%;height:100%;object-fit:cover;transform:none;transition:none}
+#studio-team .member:hover img{transform:none}
 #studio-team .member .eyebrow{font-size:9px;margin-top:23px}
 #studio-team .member h3{font-size:26px;letter-spacing:-.025em;margin-top:8px}
 #studio-team .member-games{font-size:13px;line-height:1.7;margin-top:15px;max-width:350px}
@@ -53,3 +53,7 @@
 #studio-team { scroll-margin-top: 100px; }
 @media(max-width:900px) { .studio-intro { gap: 35px; } .studio-intro .studio-intro-description { font-size: 16px; } }
 @media(max-width:760px) { .studio-intro { grid-template-columns: 1fr; padding-block: 120px 60px; gap: 45px; } .studio-intro h1 { font-size: clamp(48px,11vw,64px); } .studio-intro-details { gap: 15px; } .studio-intro-art { max-width: 520px; } }
+
+/* Quiet framed portraits, without hover zoom. */
+#studio-team .member-photo{position:relative;isolation:isolate;border-radius:5px}
+#studio-team .member-photo::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;background:url('Images/Atira-subtle-border.svg') center/100% 100% no-repeat}
