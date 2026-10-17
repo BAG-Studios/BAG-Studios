@@ -166,3 +166,7 @@
 .atira-page .site-header nav .nav-demo{font-size:14px;min-height:48px;padding:13px 26px}
 }
 @media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{font-size:14px}.atira-page .site-header .site-brand{font-size:21px}.atira-page .site-header .site-brand>img{width:36px;height:36px}}
+/* Stronger primary navigation labels. */
+@media(min-width:1101px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:18px;font-weight:750;letter-spacing:.12em}}
+@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:16px;font-weight:750;letter-spacing:.08em}}
+@media(max-width:760px){.atira-page .site-header nav>a:nth-child(-n+4){font-size:18px;font-weight:750}}
