@@ -116,3 +116,6 @@
 
 :root body.home-page #home-main .game-copy>p:not(.subtitle),
 :root body.home-page #home-main .news-copy>p:not(.meta){color:#babbb9}
+
+:root body.home-page #home-main .game-copy>p.meta.game-meta{display:flex;flex-wrap:wrap;gap:24px;margin:0 0 24px;color:#e04349;font-size:10px}
+:root body.home-page #home-main .game-meta span{color:#989b92}
