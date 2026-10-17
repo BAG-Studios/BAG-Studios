@@ -81,3 +81,21 @@
 :root body.atira-page #main .atira-title{line-height:1.2}
 :root body .hero-discover .atira-wordmark{font-family:AtiraTitle,Arial,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:none;font-synthesis:none}
 :root body.home-page #home-main .game-copy>.subtitle{font-size:18px}
+
+/* Shared Discord invitation panel. */
+:root body .community.wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px;align-items:center;box-sizing:border-box;margin-block:24px 0;padding:56px;border:1px solid #b0191d55;border-radius:8px;background:radial-gradient(ellipse at 85% 50%,#8d171b24,transparent 65%),linear-gradient(115deg,#1b1113,#141214 70%);overflow:hidden}
+:root body .community .community-copy{max-width:620px}
+:root body .community .eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 24px}
+:root body .community .eyebrow::before{content:'';width:32px;height:1px;background:#b0191d}
+:root body .community h2{font:650 clamp(32px,3.3vw,48px)/1.1 Studio,Arial,sans-serif;letter-spacing:-.035em;margin:0 0 22px}
+:root body .community .community-intro{font:16px/1.8 Arial,sans-serif;color:#babbb9;margin:0 0 24px;max-width:520px}
+:root body .community .community-reasons{display:grid;gap:14px;list-style:none;margin:0 0 32px;padding:0;color:#babbb9;font:14px/1.6 Arial,sans-serif}
+:root body .community-reasons li{position:relative;padding-left:22px}
+:root body .community-reasons li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#ce2328}
+:root body .community .community-note{margin:12px 0 0;font:10px/1.6 Arial,sans-serif;letter-spacing:.12em;color:#8f8b8e;text-transform:uppercase}
+:root body .community-art{display:grid;place-items:center;min-width:0}
+:root body .community-orbit{position:relative;display:grid;place-items:center;width:min(100%,320px);aspect-ratio:1;border:1px solid #a0222838;border-radius:50%;background:radial-gradient(circle,#a21e2633,transparent 70%)}
+:root body .community-orbit::before{content:'';position:absolute;inset:18%;border:1px dashed #a022284d;border-radius:50%}
+:root body .community-discord-mark{display:block;width:52%;aspect-ratio:1;background:#ca4740;mask:url('Images/DiscordIcon.png') center/contain no-repeat;-webkit-mask:url('Images/DiscordIcon.png') center/contain no-repeat;mask-mode:luminance}
+@media(max-width:1000px){:root body .community.wrap{padding:40px;gap:28px;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr)}}
+@media(max-width:760px){:root body .community.wrap{padding:30px 24px;grid-template-columns:minmax(0,1fr);gap:28px}:root body .community-art{grid-row:1}:root body .community-orbit{width:140px}:root body .community h2{font-size:34px}:root body .community .community-note{font-size:9px}}
