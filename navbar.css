@@ -47,3 +47,4 @@
 :root body .site-header nav .nav-demo{align-self:flex-start;margin:16px 0 0;padding:13px 26px}
 }
 @media(prefers-reduced-motion:reduce){:root body .site-header nav>a::after,:root body .site-header nav .nav-demo{transition:none}}
+:root body .site-header{padding-inline:var(--site-gutter)}

@@ -64,3 +64,8 @@
 :root body .blog-read-more:hover,
 :root body .games-open:hover,
 :root body .studio-intro-link:hover {transform:none}}
+/* Match the Home page's outer margins throughout the site. */
+:root body{--site-gutter:max(72px,calc((100vw - 1280px)/2))}
+:root body .games-feature{max-width:none}
+@media(max-width:1100px){:root body{--site-gutter:40px}}
+@media(max-width:760px){:root body{--site-gutter:24px}}
