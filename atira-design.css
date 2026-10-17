@@ -114,3 +114,16 @@
 .atira-page #main .game-hero .game-title-subtitle{margin:12px 0 0;line-height:1.3;letter-spacing:.055em}
 .atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){margin:0;line-height:1.6}
 .atira-page #main .game-hero .actions{margin-top:28px}
+/* Slim game-page navigation inspired by the trailer reference. */
+.atira-page .site-header{padding-block:16px;border-bottom-color:#ffffff15}
+.atira-page .site-header nav{gap:26px;font:600 12px/1.5 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.16em}
+.atira-page .site-header nav a{color:#aaaab2;padding-block:10px}
+.atira-page .site-header nav a:hover,.atira-page .site-header nav a[aria-current]{color:#fff}
+.atira-page .site-header nav a:not(.nav-discord):not(.nav-patreon)::after{height:1px;background:#b0191d;bottom:4px}
+.atira-page .site-header nav .nav-demo{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 22px;margin-left:12px;border:1px solid #c22529;border-radius:4px;background:#b0191d;color:#fff;white-space:nowrap;letter-spacing:.12em;box-sizing:border-box;transition:background .2s}
+.atira-page .site-header nav .nav-demo::after{display:none}
+.atira-page .site-header nav .nav-demo:hover{background:#ce2328}
+.atira-page .site-header .nav-discord{padding-left:18px}
+.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{width:21px;height:21px}
+@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{gap:16px;letter-spacing:.1em}.atira-page .site-header nav .nav-demo{margin-left:0;padding-inline:14px}.atira-page .site-header .site-brand{font-size:16px;gap:10px}.atira-page .site-header .nav-discord{padding-left:12px}}
+@media(max-width:760px){.atira-page .site-header{padding-block:14px}.atira-page .site-header nav{gap:6px;font-size:15px}.atira-page .site-header nav a{padding-block:14px}.atira-page .site-header nav .nav-demo{align-self:flex-start;margin:16px 0 0;padding:12px 24px}.atira-page .site-header .nav-discord{padding:20px 0 8px}}
