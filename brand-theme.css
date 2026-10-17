@@ -143,3 +143,5 @@
 @media(max-width:1000px){:root body .site-footer .footer-top .brand{font-size:19px;gap:10px}:root body .site-footer .brand .site-brand-light{font-size:10px;letter-spacing:.17em}}
 
 :root body .site-footer .footer-bottom{border-top:0}
+
+:root body .site-footer .footer-top .brand,:root body .site-footer .brand .site-brand-light{color:#929296}
