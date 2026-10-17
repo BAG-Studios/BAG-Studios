@@ -127,3 +127,9 @@
 .atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{width:21px;height:21px}
 @media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{gap:16px;letter-spacing:.1em}.atira-page .site-header nav .nav-demo{margin-left:0;padding-inline:14px}.atira-page .site-header .site-brand{font-size:16px;gap:10px}.atira-page .site-header .nav-discord{padding-left:12px}}
 @media(max-width:760px){.atira-page .site-header{padding-block:14px}.atira-page .site-header nav{gap:6px;font-size:15px}.atira-page .site-header nav a{padding-block:14px}.atira-page .site-header nav .nav-demo{align-self:flex-start;margin:16px 0 0;padding:12px 24px}.atira-page .site-header .nav-discord{padding:20px 0 8px}}
+/* Compact title lockup, with a quieter introduction beneath it. */
+.atira-page #main .game-hero-copy>.eyebrow{margin-bottom:14px}
+.atira-page #main .game-hero h1{line-height:.9;margin-bottom:26px}
+.atira-page #main .game-hero .game-title-subtitle{margin-top:8px;line-height:1.25;letter-spacing:.04em}
+.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){color:#b4b4b8;line-height:1.65}
+.atira-page #main .game-hero .actions{margin-top:30px}
