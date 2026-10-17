@@ -96,3 +96,15 @@
 .atira-page #main .game-hero .actions .trailer-icon{font:12px/1 Arial,sans-serif;letter-spacing:0}
 @media(max-width:760px){.atira-page #main .game-hero .actions{align-items:stretch}.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{min-width:0;width:100%;max-width:340px}}
 @media(prefers-reduced-motion:reduce){.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{transition:none}.atira-page #main .game-hero .actions .button:hover,.atira-page #main .game-hero .actions .text-button:hover{transform:none}}.atira-page #main .game-hero .game-title-subtitle{display:block;font:700 clamp(20px,2vw,28px)/1.4 Studio,Arial,sans-serif;letter-spacing:.08em;margin:16px 0 35px}
+
+/* Centered editorial hero, with left-aligned copy and details. */
+.atira-page{--site-gutter:max(40px,calc((100vw - 1120px)/2))}
+.atira-page #main .game-hero{padding-block:140px 90px}
+.atira-page #main .game-hero-copy{text-align:left}
+.atira-page #main .game-hero h1{font-size:clamp(96px,9vw,150px);line-height:1;margin-top:26px}
+.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){max-width:640px;font-size:21px;line-height:1.65}
+.atira-page #main .game-hero .game-title-subtitle{margin-bottom:26px}
+.atira-page #main .game-hero .game-facts{width:100%;max-width:640px;margin:48px 0 0;border-bottom:0;padding:24px 0 0;gap:22px}
+.atira-page #main .game-hero .game-facts strong{font:650 18px/1.3 Studio,Arial,sans-serif;color:#f3f1ea}
+.atira-page #main .game-hero .game-facts span{font-size:9px;letter-spacing:.12em}
+@media(max-width:760px){.atira-page{--site-gutter:24px}.atira-page #main .game-hero{padding-block:120px 55px}.atira-page #main .game-hero h1{font-size:96px}.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){font-size:18px}.atira-page #main .game-hero .game-facts{margin-top:34px;gap:22px}.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{max-width:none}}
