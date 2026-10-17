@@ -166,3 +166,15 @@
 /* One page background through the content and community section. */
 :root{--base-color:#111214}
 :root body,:root body .news-archive{background-color:var(--base-color)}
+
+/* Keep the community invitation short and focused. */
+:root body .community.wrap{padding-block:28px}
+:root body .community .discord-invite{padding:22px 28px}
+:root body .community .discord-server-icon{width:48px;height:48px;border-radius:12px;margin-bottom:10px}
+:root body .community .discord-invite-label{font-size:12px;margin-bottom:6px}
+:root body .community .discord-server-name{font-size:21px;margin-bottom:10px}
+:root body .community .discord-server-stats{margin-bottom:14px}
+:root body .community .discord-invite-button{margin-top:0;min-height:44px;padding-block:11px}
+:root body .community .discord-invite .community-note{margin-top:10px}
+:root body .community .community-intro{margin-bottom:0}
+@media(max-width:760px){:root body .community.wrap{padding:24px;gap:24px}:root body .community .discord-invite{padding:20px}}
