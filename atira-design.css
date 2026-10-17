@@ -133,3 +133,13 @@
 .atira-page #main .game-hero .game-title-subtitle{margin-top:8px;line-height:1.25;letter-spacing:.04em}
 .atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){color:#b4b4b8;line-height:1.65}
 .atira-page #main .game-hero .actions{margin-top:30px}
+/* Keep the four main links centered independently of the brand and actions. */
+@media(min-width:1101px){
+.atira-page .site-header nav{position:static}
+.atira-page .site-header nav>a:nth-child(-n+4){position:absolute;top:50%;transform:translateY(-50%);width:84px;text-align:center}
+.atira-page .site-header nav>a:nth-child(1){left:calc(50% - 168px)}
+.atira-page .site-header nav>a:nth-child(2){left:calc(50% - 84px)}
+.atira-page .site-header nav>a:nth-child(3){left:50%}
+.atira-page .site-header nav>a:nth-child(4){left:calc(50% + 84px)}
+.atira-page .site-header nav>a:nth-child(-n+4)::after{left:16px;right:16px}
+}
