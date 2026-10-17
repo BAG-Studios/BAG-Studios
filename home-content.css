@@ -30,8 +30,8 @@
 .home-page #home-main .featured{border-top:0;padding-top:35px;padding-bottom:120px;scroll-margin-top:130px}
 .home-page #home-main .game-feature{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
 .home-page #home-main .game-art{height:auto;min-height:0;overflow:hidden;position:relative}
-.home-page #home-main .game-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.home-page #home-main .game-feature:hover .game-art img{transform:scale(1.025)}
+.home-page #home-main .game-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none;transition:none}
+.home-page #home-main .game-feature:hover .game-art img{transform:none}
 .home-page #home-main .image-label{position:absolute;left:22px;bottom:20px;color:#fff;z-index:1}
 .home-page #home-main .game-art:after,.home-page #home-main .news-image:after{content:'';position:absolute;inset:60% 0 0;background:linear-gradient(transparent,#0008);pointer-events:none}
 .home-page #home-main .atira-title{font-family:Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:-.06em;font-weight:750}
@@ -43,8 +43,8 @@
 .home-page #home-main .news-section{border-top:1px solid #ffffff06;padding:36px 0 100px}
 .home-page #home-main .news-feature{display:grid;grid-template-columns:1.45fr 1fr;gap:60px;align-items:center}
 .home-page #home-main .news-image{position:relative;height:420px;overflow:hidden}
-.home-page #home-main .news-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.home-page #home-main .news-feature:hover img{transform:scale(1.035)}
+.home-page #home-main .news-image img{width:100%;height:100%;object-fit:cover;transform:none;transition:none}
+.home-page #home-main .news-feature:hover img{transform:none}
 .home-page #home-main .news-copy .meta{display:flex;flex-wrap:wrap;gap:24px;color:#e04349;font-size:10px}
 .home-page #home-main .news-copy .meta span{color:#989b92}
 .home-page #home-main .news-copy h3{margin:25px 0;font-size:44px}
