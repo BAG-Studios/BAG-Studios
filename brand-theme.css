@@ -162,3 +162,7 @@
 :root body .site-footer .footer-top h3{margin-bottom:6px}
 :root body .site-footer .footer-bottom{margin-top:24px}
 }
+
+/* One page background through the content and community section. */
+:root{--base-color:#111214}
+:root body,:root body .news-archive{background-color:var(--base-color)}
