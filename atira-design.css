@@ -108,3 +108,9 @@
 .atira-page #main .game-hero .game-facts strong{font:650 18px/1.3 Studio,Arial,sans-serif;color:#f3f1ea}
 .atira-page #main .game-hero .game-facts span{font-size:9px;letter-spacing:.12em}
 @media(max-width:760px){.atira-page{--site-gutter:24px}.atira-page #main .game-hero{padding-block:120px 55px}.atira-page #main .game-hero h1{font-size:96px}.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){font-size:18px}.atira-page #main .game-hero .game-facts{margin-top:34px;gap:22px}.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{max-width:none}}
+/* Keep the title lockup and introduction evenly spaced. */
+.atira-page #main .game-hero-copy>.eyebrow{margin:0 0 18px}
+.atira-page #main .game-hero h1{margin:0 0 24px;line-height:1}
+.atira-page #main .game-hero .game-title-subtitle{margin:12px 0 0;line-height:1.3;letter-spacing:.055em}
+.atira-page #main .game-hero-copy>p:not(.eyebrow):not(.subtitle){margin:0;line-height:1.6}
+.atira-page #main .game-hero .actions{margin-top:28px}
