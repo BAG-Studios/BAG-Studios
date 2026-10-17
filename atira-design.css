@@ -189,7 +189,7 @@
 .atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{display:block}
 .atira-page .site-header .site-brand,.atira-page .site-header .site-brand-light{line-height:1}
 }
-/* Worn metal edging and painted red corners, layered over the artwork. */
-.atira-page #main .feature-visual{position:relative;border-radius:6px;isolation:isolate;box-shadow:0 12px 32px #0003}
-.atira-page #main .feature-visual::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff12,inset 0 0 24px #0004}
-.atira-page #main .feature-visual::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:url('Images/Atira-worn-frame.svg') center/100% 100% no-repeat}
+/* Painted slash accents layered over the untouched artwork. */
+.atira-page #main .feature-visual{position:relative;border-radius:0;isolation:isolate;box-shadow:none;clip-path:polygon(0 .8%,18% 0,46% .4%,78% 0,99.7% .7%,100% 35%,99.6% 70%,100% 99.2%,73% 100%,41% 99.5%,.4% 100%,0 66%,.3% 31%)}
+.atira-page #main .feature-visual::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 22px #0003}
+.atira-page #main .feature-visual::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:url('Images/Atira-brush-frame.svg') center/100% 100% no-repeat}
