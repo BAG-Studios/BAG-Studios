@@ -95,4 +95,4 @@
 .atira-page #main .game-hero .actions .text-button:hover{background:#ffffff12;border-color:#ffffff70;transform:translateY(-2px)}
 .atira-page #main .game-hero .actions .trailer-icon{font:12px/1 Arial,sans-serif;letter-spacing:0}
 @media(max-width:760px){.atira-page #main .game-hero .actions{align-items:stretch}.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{min-width:0;width:100%;max-width:340px}}
-@media(prefers-reduced-motion:reduce){.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{transition:none}.atira-page #main .game-hero .actions .button:hover,.atira-page #main .game-hero .actions .text-button:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.atira-page #main .game-hero .actions .button,.atira-page #main .game-hero .actions .text-button{transition:none}.atira-page #main .game-hero .actions .button:hover,.atira-page #main .game-hero .actions .text-button:hover{transform:none}}.atira-page #main .game-hero .game-title-subtitle{display:block;font:700 clamp(20px,2vw,28px)/1.4 Studio,Arial,sans-serif;letter-spacing:.08em;margin:16px 0 35px}
