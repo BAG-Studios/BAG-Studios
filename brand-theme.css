@@ -1,0 +1,66 @@
+@font-face{font-family:Studio;src:local('Bahnschrift');font-display:swap}
+:root{--brand-red:#b0191d;--brand-red-hover:#ce2328;--brand-accent:#e04349}
+:root body .community .button,
+:root body .page-button,
+:root body.home-page .hero-discover,
+:root body.home-page .hero-watch,
+:root body.home-page #home-main .button,
+:root body.atira-page #main .game-hero .actions .button,
+:root body.atira-page #main .game-hero .actions .text-button,
+:root body .blog-read-more,
+:root body .games-open,
+:root body .studio-intro-link {
+ display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:50px;padding:14px 28px;border:1px solid #c22529;border-radius:4px;background:var(--brand-red);color:#fff;font:750 16px/1.2 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.13em;text-transform:uppercase;text-align:center;text-decoration:none;white-space:normal;transition:background .2s,border-color .2s,transform .2s;
+}
+:root body .community .button:hover,
+:root body .page-button:hover,
+:root body.home-page .hero-discover:hover,
+:root body.home-page .hero-watch:hover,
+:root body.home-page #home-main .button:hover,
+:root body.atira-page #main .game-hero .actions .button:hover,
+:root body.atira-page #main .game-hero .actions .text-button:hover,
+:root body .blog-read-more:hover,
+:root body .games-open:hover,
+:root body .studio-intro-link:hover {background:var(--brand-red-hover);border-color:#e13338;color:#fff;transform:translateY(-2px);filter:none}
+:root body .page-button.secondary,:root body.home-page .hero-watch,:root body.home-page #home-main .button.secondary,:root body.atira-page #main .game-hero .actions .text-button,:root body .studio-intro-link {background:#0005;border-color:#ffffff30;color:#fff}
+:root body .page-button.secondary:hover,:root body.home-page .hero-watch:hover,:root body.home-page #home-main .button.secondary:hover,:root body.atira-page #main .game-hero .actions .text-button:hover,:root body .studio-intro-link:hover {background:#ffffff12;border-color:#ffffff70;color:#fff}
+:root body .community .button:focus-visible,
+:root body .page-button:focus-visible,
+:root body.home-page .hero-discover:focus-visible,
+:root body.home-page .hero-watch:focus-visible,
+:root body.home-page #home-main .button:focus-visible,
+:root body.atira-page #main .game-hero .actions .button:focus-visible,
+:root body.atira-page #main .game-hero .actions .text-button:focus-visible,
+:root body .blog-read-more:focus-visible,
+:root body .games-open:focus-visible,
+:root body .studio-intro-link:focus-visible {outline:2px solid var(--brand-accent);outline-offset:4px}
+:root body.home-page .hero-watch::before{content:'▶';font:12px/1 Arial,sans-serif}
+@media(max-width:600px){:root body .community .button,
+:root body .page-button,
+:root body.home-page .hero-discover,
+:root body.home-page .hero-watch,
+:root body.home-page #home-main .button,
+:root body.atira-page #main .game-hero .actions .button,
+:root body.atira-page #main .game-hero .actions .text-button,
+:root body .blog-read-more,
+:root body .games-open,
+:root body .studio-intro-link {font-size:14px;padding:14px 22px;max-width:100%}}
+@media(prefers-reduced-motion:reduce){:root body .community .button,
+:root body .page-button,
+:root body.home-page .hero-discover,
+:root body.home-page .hero-watch,
+:root body.home-page #home-main .button,
+:root body.atira-page #main .game-hero .actions .button,
+:root body.atira-page #main .game-hero .actions .text-button,
+:root body .blog-read-more,
+:root body .games-open,
+:root body .studio-intro-link {transition:none}:root body .community .button:hover,
+:root body .page-button:hover,
+:root body.home-page .hero-discover:hover,
+:root body.home-page .hero-watch:hover,
+:root body.home-page #home-main .button:hover,
+:root body.atira-page #main .game-hero .actions .button:hover,
+:root body.atira-page #main .game-hero .actions .text-button:hover,
+:root body .blog-read-more:hover,
+:root body .games-open:hover,
+:root body .studio-intro-link:hover {transform:none}}
