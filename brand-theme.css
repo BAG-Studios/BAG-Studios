@@ -69,3 +69,15 @@
 :root body .games-feature{max-width:none}
 @media(max-width:1100px){:root body{--site-gutter:40px}}
 @media(max-width:760px){:root body{--site-gutter:24px}}
+/* Use Atira's original game typeface for every title lockup. */
+@font-face{font-family:AtiraTitle;src:url('Fonts/KdamThmorPro-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+:root body.home-page #home-main .atira-title,
+:root body.atira-page #main .atira-title,
+:root body .games-copy h2,
+:root body .studio-intro-details .atira-wordmark{font-family:AtiraTitle,Arial,sans-serif;font-weight:400;font-stretch:normal;font-style:normal;letter-spacing:0;line-height:1.2;font-synthesis:none}
+:root body.home-page #home-main .game-copy>.subtitle,
+:root body .games-subtitle,
+:root body.atira-page #main .game-hero .game-title-subtitle{font-family:AtiraTitle,Arial,sans-serif;font-weight:400;font-stretch:normal;letter-spacing:.01em;line-height:1.4;text-transform:none;font-synthesis:none}
+:root body.atira-page #main .atira-title{line-height:1.2}
+:root body .hero-discover .atira-wordmark{font-family:AtiraTitle,Arial,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:none;font-synthesis:none}
+:root body.home-page #home-main .game-copy>.subtitle{font-size:18px}
