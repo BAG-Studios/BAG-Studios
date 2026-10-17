@@ -107,3 +107,9 @@
 }
 
 .home-page #home-main .game-copy>p:not(.subtitle){color:#f3f1ea}
+
+/* Match both feature blocks with pure white copy. */
+:root body.home-page #home-main .game-copy .atira-title,
+:root body.home-page #home-main .game-copy>p,
+:root body.home-page #home-main .news-copy h3,
+:root body.home-page #home-main .news-copy>p:not(.meta){color:#fff}
