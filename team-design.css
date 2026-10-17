@@ -57,3 +57,5 @@
 /* Quiet framed portraits, without hover zoom. */
 #studio-team .member-photo{position:relative;isolation:isolate;border-radius:5px}
 #studio-team .member-photo::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;background:url('Images/Atira-subtle-border.svg') center/100% 100% no-repeat}
+:root body .studio-intro-link{gap:14px;vertical-align:middle}
+.studio-intro-link .team-action-arrow{display:block;flex:none;width:16px;height:16px}
