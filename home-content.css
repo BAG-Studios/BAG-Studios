@@ -113,3 +113,6 @@
 :root body.home-page #home-main .game-copy>p,
 :root body.home-page #home-main .news-copy h3,
 :root body.home-page #home-main .news-copy>p:not(.meta){color:#fff}
+
+:root body.home-page #home-main .game-copy>p:not(.subtitle),
+:root body.home-page #home-main .news-copy>p:not(.meta){color:#babbb9}
