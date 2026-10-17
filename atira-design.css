@@ -150,3 +150,19 @@
 .atira-page .site-header .site-brand-light{font:500 11px/1 Studio,Arial,sans-serif;letter-spacing:.22em;color:#c5c5ca}
 .atira-page .site-header .site-brand:hover .site-brand-light{color:#fff}
 @media(max-width:1100px){.atira-page .site-header .site-brand{font-size:19px;gap:10px}.atira-page .site-header .site-brand>img{width:32px;height:32px}.atira-page .site-header .site-brand-light{font-size:10px;letter-spacing:.17em}}
+/* Improve the header's size and readability. */
+@media(min-width:1101px){
+.atira-page .site-header{padding-block:20px;min-height:88px;box-sizing:border-box}
+.atira-page .site-header nav{font-size:15px;gap:28px}
+.atira-page .site-header .site-brand{font-size:25px;gap:14px}
+.atira-page .site-header .site-brand>img{width:44px;height:44px}
+.atira-page .site-header .site-brand-light{font-size:13px}
+.atira-page .site-header nav>a:nth-child(-n+4){width:100px}
+.atira-page .site-header nav>a:nth-child(1){left:calc(50% - 200px)}
+.atira-page .site-header nav>a:nth-child(2){left:calc(50% - 100px)}
+.atira-page .site-header nav>a:nth-child(3){left:50%}
+.atira-page .site-header nav>a:nth-child(4){left:calc(50% + 100px)}
+.atira-page .site-header .nav-discord img,.atira-page .site-header .nav-patreon img{width:26px;height:26px}
+.atira-page .site-header nav .nav-demo{font-size:14px;min-height:48px;padding:13px 26px}
+}
+@media(min-width:761px) and (max-width:1100px){.atira-page .site-header nav{font-size:14px}.atira-page .site-header .site-brand{font-size:21px}.atira-page .site-header .site-brand>img{width:36px;height:36px}}
