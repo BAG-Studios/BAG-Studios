@@ -184,3 +184,13 @@
 :root body .games-feature:hover,:root body .games-feature:focus-visible,
 :root body .blog-card:hover,:root body .blog-card:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--site-white) 24%,#ffffff20);box-shadow:none}
 @media(prefers-reduced-motion:reduce){:root body .games-feature,:root body .blog-card{transition:none}:root body .games-feature:hover,:root body .games-feature:focus-visible,:root body .blog-card:hover,:root body .blog-card:focus-visible{transform:none}}
+
+/* Preserve Discord styling inside the server invitation. */
+:root body .community .discord-invite,
+:root body .community .discord-invite .discord-invite-label,
+:root body .community .discord-invite .discord-server-name,
+:root body .community .discord-invite .discord-server-stats,
+:root body .community .discord-invite .community-note{color:#fff}
+:root body .community .discord-invite .discord-invite-button{background:#5865f2;border-color:#5865f2;color:#fff}
+:root body .community .discord-invite .discord-invite-button:hover{background:#4752c4;border-color:#4752c4;color:#fff}
+:root body .community .discord-invite .discord-invite-button:focus-visible{outline-color:#8891f7}
