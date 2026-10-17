@@ -844,7 +844,7 @@ html { scroll-behavior: smooth; }
 .home-page .hero-content h2 .hero-studios { color: #e04349; }
 
 /* Standalone exploration cue at the bottom of the Home artwork. */
-.home-page .hero-explore { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 8px; color: #d0d0c9; font: 10px/1.6 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.home-page .hero-explore { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 8px; color: #85858a; font: 10px/1.6 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
 
 
 @media(max-width:760px) { .home-page .hero-explore { bottom: 25px; } }
