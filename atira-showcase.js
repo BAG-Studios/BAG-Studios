@@ -12,3 +12,8 @@ document.querySelectorAll('[data-trailer]').forEach(button => button.addEventLis
 dialog.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
 dialog.addEventListener('close', () => host.replaceChildren());
 dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+
+// Preserve the Home page's direct trailer link after removing the preview section.
+if (window.location.hash === '#showcase') {
+  document.querySelector('[data-trailer]').click();
+}
