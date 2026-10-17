@@ -1,6 +1,6 @@
 /* Approved team layout, with the existing character introduction retained. */
 @font-face { font-family:Studio; src:local('Bahnschrift'); font-display:swap; }
-#studio-team { width:calc(100% - 2 * var(--site-gutter)); margin-inline:auto; color:#f3f1ea; font:16px/1.6 Arial,Helvetica,sans-serif; }
+#studio-team { width:calc(100% - 2 * var(--site-gutter)); margin-inline:auto; color:var(--site-white); font:16px/1.6 Arial,Helvetica,sans-serif; }
 #studio-team h2,#studio-team h3 { font-family:Studio,Arial,sans-serif; line-height:1.04; letter-spacing:-.045em; font-weight:650; }
 #studio-team h2 { font-size:clamp(36px,4.2vw,64px); }
 #studio-team p { color:#babbb9; }
@@ -41,9 +41,9 @@
 .studio-intro h1 span { color: #e04349; }
 .studio-intro .studio-intro-description { font: 18px/1.8 Arial,sans-serif; color: #babbb9; max-width: 520px; margin: 0; }
 .studio-intro-details { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; border-top: 1px solid #ffffff20; padding-top: 25px; margin-top: 36px; }
-.studio-intro-details strong { display: block; color: #f3f1ea; font: 600 23px/1.2 Studio,Arial,sans-serif; }
+.studio-intro-details strong { display: block; color: var(--site-white); font: 600 23px/1.2 Studio,Arial,sans-serif; }
 .studio-intro-details span { display: block; margin-top: 9px; color: #92988e; font: 11px/1.5 Arial,sans-serif; }
-.studio-intro-link { display: inline-flex; align-items: center; gap: 45px; margin-top: 35px; font: 700 13px/1.6 Arial,sans-serif; color: #f3f1ea; }
+.studio-intro-link { display: inline-flex; align-items: center; gap: 45px; margin-top: 35px; font: 700 13px/1.6 Arial,sans-serif; color: var(--site-white); }
 .studio-intro-link:hover { color: #e04349; }
 .studio-intro-link:focus-visible { outline: 2px solid #e04349; outline-offset: 6px; }
 .studio-intro-art { margin: 0; min-width: 0; }

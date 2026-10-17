@@ -10,7 +10,7 @@
 :root body .blog-read-more,
 :root body .games-open,
 :root body .studio-intro-link {
- display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:50px;padding:14px 28px;border:1px solid #c22529;border-radius:4px;background:var(--brand-red);color:#fff;font:750 16px/1.2 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.13em;text-transform:uppercase;text-align:center;text-decoration:none;white-space:normal;transition:background .2s,border-color .2s,transform .2s;
+ display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;min-height:50px;padding:14px 28px;border:1px solid #c22529;border-radius:4px;background:var(--brand-red);color:var(--site-white);font:750 16px/1.2 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.13em;text-transform:uppercase;text-align:center;text-decoration:none;white-space:normal;transition:background .2s,border-color .2s,transform .2s;
 }
 :root body .community .button:hover,
 :root body .page-button:hover,
@@ -21,9 +21,9 @@
 :root body.atira-page #main .game-hero .actions .text-button:hover,
 :root body .blog-read-more:hover,
 :root body .games-open:hover,
-:root body .studio-intro-link:hover {background:var(--brand-red-hover);border-color:#e13338;color:#fff;transform:translateY(-2px);filter:none}
-:root body .page-button.secondary,:root body.home-page .hero-watch,:root body.home-page #home-main .button.secondary,:root body.atira-page #main .game-hero .actions .text-button,:root body .studio-intro-link {background:#0005;border-color:#ffffff30;color:#fff}
-:root body .page-button.secondary:hover,:root body.home-page .hero-watch:hover,:root body.home-page #home-main .button.secondary:hover,:root body.atira-page #main .game-hero .actions .text-button:hover,:root body .studio-intro-link:hover {background:#ffffff12;border-color:#ffffff70;color:#fff}
+:root body .studio-intro-link:hover {background:var(--brand-red-hover);border-color:#e13338;color:var(--site-white);transform:translateY(-2px);filter:none}
+:root body .page-button.secondary,:root body.home-page .hero-watch,:root body.home-page #home-main .button.secondary,:root body.atira-page #main .game-hero .actions .text-button,:root body .studio-intro-link {background:#0005;border-color:#ffffff30;color:var(--site-white)}
+:root body .page-button.secondary:hover,:root body.home-page .hero-watch:hover,:root body.home-page #home-main .button.secondary:hover,:root body.atira-page #main .game-hero .actions .text-button:hover,:root body .studio-intro-link:hover {background:#ffffff12;border-color:#ffffff70;color:var(--site-white)}
 :root body .community .button:focus-visible,
 :root body .page-button:focus-visible,
 :root body.home-page .hero-discover:focus-visible,
@@ -111,7 +111,7 @@
 :root body .community .discord-invite{width:100%;max-width:420px;box-sizing:border-box;padding:32px;background:#232428;border:1px solid #ffffff0e;border-radius:10px;text-align:center;box-shadow:0 16px 48px #0003}
 :root body .community .discord-server-icon{display:block;width:64px;height:64px;object-fit:cover;border-radius:16px;margin:0 auto 14px}
 :root body .community .discord-invite-label{font:14px/1.5 Arial,sans-serif;color:#c4c5c9;margin:0 0 10px}
-:root body .community .discord-server-name{font:600 23px/1.3 Studio,Arial,sans-serif;letter-spacing:-.02em;color:#fff;margin:0 0 14px}
+:root body .community .discord-server-name{font:600 23px/1.3 Studio,Arial,sans-serif;letter-spacing:-.02em;color:var(--site-white);margin:0 0 14px}
 :root body .community .discord-server-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:24px;color:#d2d3d7;font:12px/1.5 Arial,sans-serif}
 :root body .community .discord-server-stats[hidden]{display:none}
 :root body .discord-server-stats>span{display:inline-flex;align-items:center;gap:4px}
@@ -135,10 +135,10 @@
 :root body .site-footer a:hover{color:#dedee0}
 
 /* Match the navbar's text-only studio wordmark. */
-:root body .site-footer .footer-top .brand{display:flex;align-items:center;gap:14px;white-space:nowrap;font:750 25px/1 Studio,Arial,sans-serif;letter-spacing:.035em;color:#f3f1ea;text-shadow:0 1px 10px #0006}
+:root body .site-footer .footer-top .brand{display:flex;align-items:center;gap:14px;white-space:nowrap;font:750 25px/1 Studio,Arial,sans-serif;letter-spacing:.035em;color:var(--site-white);text-shadow:0 1px 10px #0006}
 :root body .site-footer .brand>span{display:flex;align-items:baseline;gap:7px}
 :root body .site-footer .brand .site-brand-light{font:500 13px/1 Studio,Arial,sans-serif;letter-spacing:.22em;color:#c5c5ca}
-:root body .site-footer .brand:hover .site-brand-light{color:#fff}
+:root body .site-footer .brand:hover .site-brand-light{color:var(--site-white)}
 @media(min-width:1001px) and (max-width:1100px){:root body .site-footer .footer-top .brand{font-size:21px;gap:10px}:root body .site-footer .brand .site-brand-light{font-size:10px;letter-spacing:.17em}}
 @media(max-width:1000px){:root body .site-footer .footer-top .brand{font-size:19px;gap:10px}:root body .site-footer .brand .site-brand-light{font-size:10px;letter-spacing:.17em}}
 

@@ -1,5 +1,5 @@
 @font-face { font-family:Studio; src:local('Bahnschrift'); font-display:swap; }
-.blog-showcase { padding:145px var(--site-gutter) 90px; color:#f3f1ea; }
+.blog-showcase { padding:145px var(--site-gutter) 90px; color:var(--site-white); }
 .blog-showcase .blog-heading { margin-bottom:45px; border:0; padding:0; }
 .blog-heading h1 { font:650 clamp(40px,4vw,56px)/1.1 Studio,Arial,sans-serif; letter-spacing:-.04em; margin:0 0 18px; }
 .blog-heading p { color:#babbb9; font:16px/1.7 Arial,sans-serif; margin:0; }
@@ -7,7 +7,7 @@
 .blog-entry { min-width:0; }
 .blog-meta { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:0 6px 9px; color:#e04349; font:700 11px/1.5 Arial,sans-serif; }
 .blog-meta time { color:#babbb9; font-weight:400; white-space:nowrap; }
-.blog-card { display:flex; flex-direction:column; padding:26px 24px 24px; min-height:0; height:calc(100% - 26px); border:1px solid #ffffff15; border-radius:5px; background:#1d2024; color:#f3f1ea; text-decoration:none; transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.blog-card { display:flex; flex-direction:column; padding:26px 24px 24px; min-height:0; height:calc(100% - 26px); border:1px solid #ffffff15; border-radius:5px; background:#1d2024; color:var(--site-white); text-decoration:none; transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
 .blog-card h2 { display:flex; align-items:center; justify-content:center; min-height:54px; text-align:center; font:650 26px/1.25 Studio,Arial,sans-serif; letter-spacing:-.02em; margin:0 0 20px; }
 .blog-art { overflow:hidden; margin-bottom:22px; }
 .blog-art img { display:block; width:100%; height:auto; }
