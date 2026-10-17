@@ -2,7 +2,7 @@ const dialog = document.querySelector('.trailer-dialog');
 const host = dialog.querySelector('.video-host');
 document.querySelectorAll('[data-trailer]').forEach(button => button.addEventListener('click', () => {
   const frame = document.createElement('iframe');
-  frame.src = 'https://www.youtube-nocookie.com/embed/ezhkpZdxWnw?autoplay=1';
+  frame.src = 'https://www.youtube-nocookie.com/embed/ezhkpZdxWnw?autoplay=1&controls=1&playsinline=1&rel=0';
   frame.title = 'Atira early gameplay showcase';
   frame.allow = 'autoplay; encrypted-media; picture-in-picture';
   frame.allowFullscreen = true;

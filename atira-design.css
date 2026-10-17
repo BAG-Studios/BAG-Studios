@@ -54,9 +54,9 @@
 .atira-page #main .video-preview:hover img{filter:brightness(.85)}
 .atira-page #main .play-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;display:grid;place-items:center;color:#111;background:#c9a64f;border-radius:50%;font-size:22px;padding-left:4px}
 .atira-page #main .video-caption{position:absolute;bottom:28px;left:30px;right:30px;display:flex;justify-content:space-between;font-size:15px;color:#fff}
-.atira-page .trailer-dialog{padding:50px 24px 24px;border:1px solid #ffffff30;background:#111214;width:min(1100px,95vw);max-height:95svh;color:#eee}
+.atira-page .trailer-dialog{padding:0;border:1px solid #ffffff30;border-radius:8px;background:#000;width:min(1000px,calc(100vw - 32px),calc((100svh - 48px)*16/9));max-width:none;max-height:calc(100svh - 48px);overflow:hidden;color:#fff;box-shadow:0 24px 80px #0009}
 .atira-page .trailer-dialog::backdrop{background:#000d;backdrop-filter:blur(5px)}
-.atira-page .close-dialog{position:absolute;right:24px;top:12px;background:none;color:white;border:none;font-size:13px}
+.atira-page .close-dialog{position:absolute;z-index:2;right:16px;top:16px;width:40px;height:40px;display:grid;place-items:center;padding:0;background:#080808b3;color:#ddd;border:1px solid #ffffff30;border-radius:4px;font:300 28px/1 Arial,sans-serif;cursor:pointer}.atira-page .close-dialog:hover{background:#222;color:#fff}.atira-page .close-dialog:focus-visible{outline:2px solid #c9a64f;outline-offset:-3px}
 .atira-page .video-host iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
 @media(max-width:1100px){.atira-page #main .feature-row{gap:40px}}
 @media(max-width:760px){.atira-page #main .section-top{gap:20px;align-items:start}
