@@ -122,3 +122,14 @@
 @media(max-width:1000px){:root body .community.wrap{gap:32px;padding:36px}:root body .community .discord-invite{padding:28px 20px}}
 @media(max-width:850px){:root body .community.wrap{grid-template-columns:minmax(0,1fr)}:root body .community-art{grid-row:auto}:root body .community-copy{max-width:none}}
 @media(max-width:760px){:root body .community.wrap{padding:30px 24px}:root body .community .discord-server-name{font-size:21px}}
+
+/* Keep footer content quiet against its dark background. */
+:root body .site-footer.wrap,
+:root body .site-footer .brand,
+:root body .site-footer .footer-top p,
+:root body .site-footer .footer-top h3,
+:root body .site-footer .footer-top a,
+:root body .site-footer .footer-bottom,
+:root body .site-footer .footer-bottom a{color:#929296}
+:root body .site-footer .brand img{opacity:.6}
+:root body .site-footer a:hover{color:#dedee0}
