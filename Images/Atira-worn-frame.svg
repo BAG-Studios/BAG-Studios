@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" preserveAspectRatio="none" fill="none">
+ <defs>
+  <filter id="worn" x="-5%" y="-5%" width="110%" height="110%">
+   <feTurbulence type="fractalNoise" baseFrequency=".065" numOctaves="3" seed="12" result="grain"/>
+   <feDisplacementMap in="SourceGraphic" in2="grain" scale="3.8" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+   <stop stop-color="#aeb1b7" stop-opacity=".7"/><stop offset=".3" stop-color="#4d5057" stop-opacity=".25"/><stop offset=".65" stop-color="#858990" stop-opacity=".65"/><stop offset="1" stop-color="#4d5057" stop-opacity=".4"/>
+  </linearGradient>
+ </defs>
+ <rect x="3" y="3" width="994" height="694" rx="7" stroke="url(#metal)" stroke-width="3" filter="url(#worn)"/>
+ <path d="M4 44V12Q4 4 12 4H58 M942 696H988Q996 696 996 688V656" stroke="#bc252c" stroke-width="3" filter="url(#worn)"/>
+ <path d="M74 4H106 M434 3H457 M996 77V91 M3 442V464 M816 697H852 M113 696H126" stroke="#c8c9cd" stroke-opacity=".4" stroke-width="2" filter="url(#worn)"/>
+</svg>
