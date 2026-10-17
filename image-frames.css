@@ -1,0 +1,16 @@
+/* Image frames follow the exact visible image box, without an inset. */
+:root body.atira-page #main .feature-visual,
+:root body #studio-team .member-photo,
+:root body.home-page #home-main .game-art,
+:root body.home-page #home-main .news-image,
+:root body .blog-art{position:relative;overflow:hidden;isolation:isolate;border-radius:5px}
+:root body.atira-page #main .feature-visual::after,
+:root body #studio-team .member-photo::after,
+:root body.home-page #home-main .game-art::after,
+:root body.home-page #home-main .news-image::after,
+:root body .blog-art::after{content:'';display:block;position:absolute;inset:0;z-index:3;box-sizing:border-box;border:1px solid #777a7e99;border-radius:inherit;background:none;pointer-events:none;opacity:1}
+:root body.atira-page #main .feature-visual::before{display:none}
+:root body .contact-person img,
+:root body .studio-intro .studio-intro-art img,
+:root body .event-article figure img{display:block;box-sizing:border-box;border:1px solid #777a7e99}
+:root body .event-article figure img{height:auto;max-height:none;object-fit:initial}
