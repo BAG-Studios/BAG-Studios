@@ -14,3 +14,5 @@
 :root body .studio-intro .studio-intro-art img,
 :root body .event-article figure img{display:block;box-sizing:border-box;border:1px solid #777a7e99}
 :root body .event-article figure img{height:auto;max-height:none;object-fit:initial}
+:root body .studio-intro .studio-intro-art img{width:100%;height:auto;aspect-ratio:auto;object-fit:fill}
+:root body .studio-intro-art figcaption{padding-inline:0}
