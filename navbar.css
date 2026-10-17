@@ -1,0 +1,49 @@
+/* One shared navbar across every studio page. */
+:root body .site-header{position:fixed;inset:0 0 auto;z-index:100;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;min-height:88px;padding:20px max(40px,calc((100vw - 1120px)/2));background:rgba(17,18,20,.96);border-bottom:1px solid #ffffff15;backdrop-filter:blur(12px)}
+:root body.home-page .site-header:not(.scrolled):not(.menu-open),:root body.atira-page .site-header:not(.scrolled):not(.menu-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
+:root body .site-header .site-brand{display:flex;align-items:center;gap:14px;white-space:nowrap;font:750 25px/1 Studio,Arial,sans-serif;letter-spacing:.035em;color:#f3f1ea;text-shadow:0 1px 10px #0006}
+:root body .site-header .site-brand>img{display:block;width:44px;height:44px;object-fit:contain;opacity:.95}
+:root body .site-header .site-brand>span{display:flex;align-items:center;gap:7px}
+:root body .site-header .site-brand-light{font:500 13px/1 Studio,Arial,sans-serif;letter-spacing:.22em;color:#c5c5ca}
+:root body .site-header .site-brand:hover .site-brand-light{color:#fff}
+:root body .site-header nav{position:static;display:flex;align-items:center;gap:28px;padding:0;font:600 15px/1 Studio,Arial,sans-serif;font-stretch:condensed;letter-spacing:.12em;text-transform:uppercase}
+:root body .site-header nav>a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;line-height:1;padding-block:10px;color:#aaaab2}
+:root body .site-header nav>a:hover,:root body .site-header nav>a[aria-current]{color:#fff}
+:root body .site-header nav>a:nth-child(-n+4){position:absolute;top:50%;width:max-content;transform:translate(-50%,-50%);font-size:18px;font-weight:750;letter-spacing:.12em;text-align:center}
+:root body .site-header nav>a:nth-child(1){left:calc(50% - 150px)}
+:root body .site-header nav>a:nth-child(2){left:calc(50% - 50px)}
+:root body .site-header nav>a:nth-child(3){left:calc(50% + 50px)}
+:root body .site-header nav>a:nth-child(4){left:calc(50% + 150px)}
+:root body .site-header nav>a:nth-child(-n+4)::after{content:'';position:absolute;left:0;right:0;bottom:8px;width:auto;height:2px;background:#c3262b;transform:scaleX(0);transform-origin:left;transition:transform .2s}
+:root body .site-header nav>a:nth-child(-n+4):hover::after,:root body .site-header nav>a:nth-child(-n+4)[aria-current]::after{transform:scaleX(1)}
+:root body .site-header .nav-discord{margin-left:6px;padding-left:18px;border-left:1px solid #ffffff06}
+:root body .site-header .nav-discord img,:root body .site-header .nav-patreon img{display:block;width:26px;height:26px;object-fit:contain}
+:root body .site-header nav .nav-demo{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-left:12px;padding:13px 26px;border:1px solid #c22529;border-radius:4px;background:#b0191d;color:#fff;font:750 14px/1.2 Studio,Arial,sans-serif;letter-spacing:.12em;white-space:nowrap;transition:background .2s}
+:root body .site-header nav .nav-demo::after{display:none}
+:root body .site-header nav .nav-demo:hover{background:#ce2328}
+:root body .site-header .site-menu-button{display:none}
+@media(min-width:1001px) and (max-width:1100px){
+:root body .site-header{padding:16px 32px;min-height:80px}
+:root body .site-header .site-brand{font-size:21px;gap:10px}
+:root body .site-header .site-brand>img{width:36px;height:36px}
+:root body .site-header .site-brand-light{font-size:10px;letter-spacing:.17em}
+:root body .site-header nav{gap:16px;letter-spacing:.1em}
+:root body .site-header nav>a:nth-child(-n+4){position:relative;inset:auto;transform:none;font-size:16px;letter-spacing:.08em}
+:root body .site-header .nav-discord{padding-left:12px}
+:root body .site-header nav .nav-demo{margin-left:0;padding-inline:14px}
+}
+@media(max-width:1000px){
+:root body .site-header{min-height:72px;padding:14px 24px}
+:root body .site-header .site-brand{font-size:19px;gap:10px}
+:root body .site-header .site-brand>img{width:32px;height:32px}
+:root body .site-header .site-brand-light{font-size:10px;letter-spacing:.17em}
+:root body .site-header .site-menu-button{display:flex;align-items:center;gap:25px;background:transparent;border:1px solid #ffffff30;color:#eee;padding:9px 12px;font:12px/1.6 Arial,sans-serif;cursor:pointer}
+:root body .site-header nav{display:none;position:absolute;top:100%;left:0;right:0;padding:24px;background:#111214;border-bottom:1px solid #ffffff15;flex-direction:column;align-items:stretch;gap:6px}
+:root body .site-header nav.open{display:flex}
+:root body .site-header.menu-open{background:#111214;backdrop-filter:blur(12px)}
+:root body .site-header nav>a:nth-child(-n+4){position:relative;inset:auto;transform:none;width:max-content;font-size:18px;padding-block:14px;justify-content:flex-start}
+:root body .site-header .nav-discord{margin:14px 0 0;padding:20px 0 8px;border-left:0;border-top:1px solid #ffffff06;justify-content:flex-start}
+:root body .site-header .nav-patreon{justify-content:flex-start}
+:root body .site-header nav .nav-demo{align-self:flex-start;margin:16px 0 0;padding:13px 26px}
+}
+@media(prefers-reduced-motion:reduce){:root body .site-header nav>a::after,:root body .site-header nav .nav-demo{transition:none}}
