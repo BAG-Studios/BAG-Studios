@@ -178,3 +178,9 @@
 :root body .community .discord-invite .community-note{margin-top:10px}
 :root body .community .community-intro{margin-bottom:0}
 @media(max-width:760px){:root body .community.wrap{padding:24px;gap:24px}:root body .community .discord-invite{padding:20px}}
+
+/* Match the portfolio project cards' subtle lift and border response. */
+:root body .games-feature,:root body .blog-card{cursor:pointer;transition:transform 160ms ease,border-color 160ms ease;box-shadow:none}
+:root body .games-feature:hover,:root body .games-feature:focus-visible,
+:root body .blog-card:hover,:root body .blog-card:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--site-white) 24%,#ffffff20);box-shadow:none}
+@media(prefers-reduced-motion:reduce){:root body .games-feature,:root body .blog-card{transition:none}:root body .games-feature:hover,:root body .games-feature:focus-visible,:root body .blog-card:hover,:root body .blog-card:focus-visible{transform:none}}
