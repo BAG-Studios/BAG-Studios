@@ -99,3 +99,8 @@
 :root body .community-discord-mark{display:block;width:52%;aspect-ratio:1;background:#ca4740;mask:url('Images/DiscordIcon.png') center/contain no-repeat;-webkit-mask:url('Images/DiscordIcon.png') center/contain no-repeat;mask-mode:luminance}
 @media(max-width:1000px){:root body .community.wrap{padding:40px;gap:28px;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr)}}
 @media(max-width:760px){:root body .community.wrap{padding:30px 24px;grid-template-columns:minmax(0,1fr);gap:28px}:root body .community-art{grid-row:1}:root body .community-orbit{width:140px}:root body .community h2{font-size:34px}:root body .community .community-note{font-size:9px}}
+
+/* A full-width dark footer, clearly separated from the page content. */
+:root body .site-footer.wrap{width:100%;box-sizing:border-box;margin:80px 0 0;padding:70px var(--site-gutter) 0;background:#09090b;border-top:1px solid #ffffff26}
+:root body .site-footer .footer-bottom{border-top-color:#ffffff18}
+@media(max-width:760px){:root body .site-footer.wrap{margin-top:56px;padding-top:48px}}
