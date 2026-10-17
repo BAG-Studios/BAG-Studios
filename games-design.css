@@ -33,3 +33,17 @@
 .games-details>div{background:#10111480;border-color:#ffffff26;border-radius:14px;padding:12px}
 .games-details dd{overflow-wrap:normal;font-size:13px}
 @media(max-width:760px){.games-feature{min-height:540px}.games-art{min-height:0;aspect-ratio:auto}.games-art img{object-position:60% 35%}.games-art::after{background:linear-gradient(0deg,#0b0d10f5 0%,#0b0d10c9 50%,#0b0d1030 100%)}.games-copy{padding:28px 24px;max-width:none}.games-copy h2{font-size:34px}.games-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.games-description{font-size:15px}}
+/* A clear title and a deliberate, uncropped character focal point. */
+.games-feature{min-height:540px;align-items:center;border-radius:18px;border-color:#ffffff1f}
+.games-art img{object-position:50% 0%}
+.games-art::after{background:linear-gradient(90deg,#0b0d10f5 0%,#0b0d10db 24%,#0b0d1075 46%,#0b0d100d 72%),linear-gradient(0deg,#0b0d1099,transparent 45%)}
+.games-copy{max-width:580px;padding:48px}
+.games-status{font-size:10px;letter-spacing:.16em;margin-bottom:22px}
+.games-copy h2{font-size:clamp(48px,5vw,64px);line-height:1;margin-bottom:10px}
+.games-subtitle{font:600 18px/1.4 Studio,Arial,sans-serif;letter-spacing:.04em;margin-bottom:24px}
+.games-description{font-size:17px;line-height:1.7;max-width:400px;color:#bfc1c8;margin-bottom:26px}
+.games-details{display:flex;gap:36px;margin:0 0 30px;padding-top:20px;max-width:390px;border-top:1px solid #ffffff24}
+.games-details>div{padding:0;border:0;border-radius:0;background:none}
+.games-details dt{font-size:9px;letter-spacing:.15em;color:#92959f;margin-bottom:7px}
+.games-details dd{font-size:14px;font-weight:500;color:#e3e3e7}
+@media(max-width:760px){.games-feature{min-height:640px;align-items:flex-end;border-radius:14px}.games-copy{padding:30px 24px;max-width:none}.games-art img{object-position:52% 0%}.games-art::after{background:linear-gradient(0deg,#0b0d10fc 0%,#0b0d10e0 44%,#0b0d1030 82%)}.games-status{margin-bottom:16px}.games-copy h2{font-size:48px}.games-subtitle{font-size:17px;margin-bottom:18px}.games-description{font-size:16px;max-width:420px;margin-bottom:20px}.games-details{gap:28px;padding-top:18px;margin-bottom:24px}}
