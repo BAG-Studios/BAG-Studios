@@ -54,6 +54,10 @@ if (discordInvite) {
         })
         .then(invite => {
             if (invite.guild?.name) discordInvite.querySelector('.discord-server-name').textContent = invite.guild.name;
+            if (invite.guild?.id && invite.guild?.icon) {
+                const icon = discordInvite.querySelector('.discord-server-icon');
+                icon.src = 'https://cdn.discordapp.com/icons/' + encodeURIComponent(invite.guild.id) + '/' + encodeURIComponent(invite.guild.icon) + '.png?size=128';
+            }
             if (Number.isFinite(invite.approximate_presence_count) && Number.isFinite(invite.approximate_member_count)) {
                 discordInvite.querySelector('[data-discord-online]').textContent = invite.approximate_presence_count.toLocaleString();
                 discordInvite.querySelector('[data-discord-members]').textContent = invite.approximate_member_count.toLocaleString();
