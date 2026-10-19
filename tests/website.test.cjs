@@ -29,6 +29,23 @@ test('unavailable configuration returns an honest failure',async()=>{
 test('client configuration never returns the server secret',async()=>{
  const res=response();await createApi({env})(request('config'),res);assert.equal(res.statusCode,200);assert.equal(res.body.publishableKey,'public-test');assert.ok(!JSON.stringify(res.body).includes('private-test'));
 });
+test('image uploads require owner authentication',async()=>{
+ const res=response();await createApi({env,fetchImpl:async()=>assert.fail('Unexpected upload')})(request('admin-upload',{base64:'bad'}),res);assert.equal(res.statusCode,401);
+});
+test('image uploads reject disguised HTML after validating the owner',async()=>{
+ const res=response();await createApi({env,fetchImpl:async()=>ok({id:'owner',email:env.ADMIN_EMAIL,email_confirmed_at:'2026-01-01'})})(request('admin-upload',{base64:Buffer.from('<html>not an image</html>').toString('base64')},{authorization:'Bearer owner'}),res);assert.equal(res.statusCode,400);
+});
+test('valid image upload is sent as binary only after verifying the owner',async()=>{
+ let calls=0;const bytes=Buffer.from('89504e470d0a1a0a00000000','hex');const api=createApi({env,fetchImpl:async(url,options)=>{
+  calls++;if(url.includes('/auth/'))return ok({id:'owner',email:env.ADMIN_EMAIL,email_confirmed_at:'2026-01-01'});
+  assert.match(url,/storage\/v1\/object\/blog-media\/[a-f0-9-]+\.png$/);assert.ok(Buffer.isBuffer(options.body));assert.equal(options.headers['Content-Type'],'image/png');return ok({Key:'saved'});
+ }});const res=response();await api(request('admin-upload',{base64:bytes.toString('base64')},{authorization:'Bearer owner'}),res);assert.equal(res.statusCode,200);assert.equal(calls,2);assert.match(res.body.url,/https:\/\/example.supabase.co\/storage\/v1\/object\/public\/blog-media\//);
+});
+test('owner saves structured article content and captions without permitting raw HTML blocks',async()=>{
+ let payload;const api=createApi({env,fetchImpl:async(url,options)=>{if(url.includes('/auth/'))return ok({id:'owner',email:env.ADMIN_EMAIL,email_confirmed_at:'2026-01-01'});payload=JSON.parse(options.body);return ok([{...payload,id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'}]);}});
+ const res=response();await api(request('admin-posts',{title:'A studio story',slug:'studio-story',excerpt:'A studio introduction.',content:'A story about development.',status:'draft',layout:{mode:'split',cover:{caption:'A real caption'},blocks:[{type:'text',text:'A story about development.'},{type:'html',text:'<script>bad()</script>'}]}},{authorization:'Bearer owner'}),res);
+ assert.equal(res.statusCode,200);assert.equal(payload.layout.cover.caption,'A real caption');assert.equal(payload.layout.mode,'split');assert.equal(payload.layout.blocks.length,1);assert.equal(payload.status,'draft');
+});
 test('article formatting escapes scripts, HTML and malicious links',()=>{
  const html=renderText('# Hello\n\n<script>alert(1)</script>\n\n[jump](javascript:alert(1))');
  assert.match(html,/<h2>Hello<\/h2>/);assert.doesNotMatch(html,/<script>|href=/);assert.match(html,/&lt;script&gt;/);

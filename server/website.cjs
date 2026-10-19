@@ -1,3 +1,5 @@
+const {randomUUID}=require('node:crypto');
+const {normalizeLayout}=require('../article-layout.js');
 class HttpError extends Error { constructor(status,message){super(message);this.status=status;} }
 const fail=(status,message)=>{throw new HttpError(status,message)};
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -15,16 +17,19 @@ function postInput(body){
  const slug=text(body.slug,3,100,'a short URL');if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))fail(400,'Use lowercase letters, numbers and hyphens for the URL.');
  const status=body.status==='published'?'published':'draft';
  let cover_url=String(body.cover_url||'').trim();if(cover_url){try{const url=new URL(cover_url,'https://bag-studios.com');if(url.protocol!=='https:'||url.username||url.password)throw new Error();cover_url=url.href;}catch{fail(400,'Use an HTTPS cover image URL.');}}
- return {title,slug,status,category:text(body.category||'STUDIO NOTES',2,60,'a category'),excerpt:text(body.excerpt,10,400,'an introduction between 10 and 400 characters'),content:text(body.content,10,100000,'the article text'),cover_url:cover_url||null,published_at:status==='published'?(body.published_at?new Date(body.published_at).toISOString():new Date().toISOString()):null};
+ let published_at=null;if(status==='published'){const date=body.published_at?new Date(body.published_at):new Date();if(!Number.isFinite(date.getTime()))fail(400,'Choose a valid publication date.');published_at=date.toISOString();}
+ const layout=body.layout?normalizeLayout(body.layout,body.content):null;
+ if(layout&&JSON.stringify(layout).length>100000)fail(400,'This story is too large. Please shorten it.');
+ return {title,slug,status,category:text(body.category||'STUDIO NOTES',2,60,'a category'),excerpt:text(body.excerpt,10,400,'an introduction between 10 and 400 characters'),content:text(body.content,10,100000,'the article text'),cover_url:cover_url||null,published_at,...(layout?{layout}:{})};
 }
 function createClient(env,fetchImpl){
  const base=env.SUPABASE_URL?.replace(/\/$/,'');
- async function call(path,{method='GET',body,token,prefer}={}){
-  const headers={apikey:token?env.SUPABASE_PUBLISHABLE_KEY:env.SUPABASE_SECRET_KEY,'Content-Type':'application/json'};
+ async function call(path,{method='GET',body,token,prefer,raw=false,contentType='application/json'}={}){
+  const headers={apikey:token?env.SUPABASE_PUBLISHABLE_KEY:env.SUPABASE_SECRET_KEY,'Content-Type':contentType};
   if(token)headers.Authorization='Bearer '+token;
   // Modern secret keys authenticate through apikey; they are not JWT bearer tokens.
   if(prefer)headers.Prefer=prefer;
-  let response;try{response=await fetchImpl(base+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(12000)});}catch{fail(503,'The service is temporarily unavailable. Please try again.');}
+  let response;try{response=await fetchImpl(base+path,{method,headers,body:body===undefined?undefined:raw?body:JSON.stringify(body),signal:AbortSignal.timeout(12000)});}catch{fail(503,'The service is temporarily unavailable. Please try again.');}
   if(!response.ok){if(response.status===409)fail(409,'That URL is already used by another post.');if(path.startsWith('/auth/'))fail(401,'Please sign in again.');fail(503,'The service is temporarily unavailable. Please try again.');}
   if(response.status===204)return null;
   try{return await response.json();}catch{return null;}
@@ -41,7 +46,7 @@ function createApi({env=process.env,fetchImpl=fetch}={}){
    if(method==='POST'){
     const origin=req.headers.origin;const host=req.headers.host;
     if(!origin||![`https://${host}`,`http://${host}`].includes(origin))fail(403,'Please submit this form from the BAG Studios website.');
-    if(Number(req.headers['content-length']||0)>140000)fail(413,'This request is too large.');
+    if(Number(req.headers['content-length']||0)>(resource==='admin-upload'?3600000:260000))fail(413,'This request is too large.');
    }
    const client=createClient(env,fetchImpl);
    if(resource==='config'&&method==='GET')return res.status(200).json({url:env.SUPABASE_URL,publishableKey:env.SUPABASE_PUBLISHABLE_KEY});
@@ -49,10 +54,22 @@ function createApi({env=process.env,fetchImpl=fetch}={}){
     const posts=await client.call('/rest/v1/blog_posts?select=id,slug,title,category,excerpt,cover_url,published_at&status=eq.published&published_at=lte.'+encodeURIComponent(new Date().toISOString())+'&order=published_at.desc&limit=100');
     return res.status(200).json({posts});
    }
-   if(!['admin-posts','admin-delete'].includes(resource))fail(404,'Not found.');
+   if(!['admin-posts','admin-delete','admin-upload','admin-media'].includes(resource))fail(404,'Not found.');
    const token=/^Bearer (.+)$/.exec(req.headers.authorization||'')?.[1];if(!token)fail(401,'Please sign in.');
    const user=await client.call('/auth/v1/user',{token});
    if(!user?.id||!user.email_confirmed_at||String(user.email).toLowerCase()!==(env.ADMIN_EMAIL||'boringarcadestudios@gmail.com').toLowerCase())fail(403,'This account cannot manage the studio website.');
+   if(resource==='admin-upload'&&method==='POST'){
+    if(typeof body.base64!=='string'||body.base64.length>3500000||!/^[A-Za-z0-9+/]+={0,2}$/.test(body.base64))fail(400,'Choose a JPEG, PNG or WebP image under 2.5 MB.');
+    const bytes=Buffer.from(body.base64,'base64');if(bytes.length>2621440)fail(400,'Choose an image under 2.5 MB.');
+    let format='';if(bytes.subarray(0,8).toString('hex')==='89504e470d0a1a0a')format='png';else if(bytes.subarray(0,3).toString('hex')==='ffd8ff')format='jpeg';else if(bytes.subarray(0,4).toString()==='RIFF'&&bytes.subarray(8,12).toString()==='WEBP')format='webp';
+    if(!format)fail(400,'Choose a valid JPEG, PNG or WebP image.');
+    const key=randomUUID()+'.'+(format==='jpeg'?'jpg':format);await client.call('/storage/v1/object/blog-media/'+key,{method:'POST',body:bytes,raw:true,contentType:'image/'+format});
+    return res.status(200).json({url:env.SUPABASE_URL+'/storage/v1/object/public/blog-media/'+key});
+   }
+   if(resource==='admin-media'&&method==='GET'){
+    const files=await client.call('/storage/v1/object/list/blog-media',{method:'POST',body:{prefix:'',limit:100,sortBy:{column:'created_at',order:'desc'}}});
+    return res.status(200).json({images:(files||[]).filter(f=>f.id&&/\.(png|jpe?g|webp)$/i.test(f.name)).map(f=>({name:f.name,url:env.SUPABASE_URL+'/storage/v1/object/public/blog-media/'+encodeURIComponent(f.name)}))});
+   }
    if(resource==='admin-posts'){
     if(method==='GET')return res.status(200).json({posts:await client.call('/rest/v1/blog_posts?select=*&order=updated_at.desc&limit=200')});
     const input=postInput(body);const id=body.id;

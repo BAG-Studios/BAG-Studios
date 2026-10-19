@@ -5,8 +5,14 @@ Repository: BAG-Studios/BAG-Studios-Website. Pushes to main deploy through Verce
 
 The unlisted `/admin.html` uses Supabase email/password authentication. Only the
 confirmed studio email can create, edit, preview, publish, unpublish and delete
-posts. Sessions remain in memory. Articles support headings, paragraphs, lists,
-an introduction and an optional HTTPS cover image. HTML is escaped. Published
+posts. Sessions remain in memory. The editor is a visual article canvas with movable
+heading, paragraph, list and image sections, cover captions, a side-image layout,
+image crops and an optional closing section with buttons. Images can be picked from
+existing studio assets or uploaded as JPEG, PNG or WebP files up to 2.5 MB. The
+blog-media bucket serves images publicly; only the verified owner API can upload.
+Articles store their layout in blog_posts.layout and preserve plain content for
+older posts. The preview and published article use the same article-layout.js
+renderer and post-article.css styles. All supplied text is escaped. Published
 articles render on the server at `/blog/<slug>` and appear in the sitemap.
 The existing static Umeå article remains available independently.
 
