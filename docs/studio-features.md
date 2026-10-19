@@ -49,6 +49,25 @@ the existing GitHub repository and `main` branch to the studio's Vercel project.
 5. With the studio connection available, apply SQL, configure private environment
    variables, create the owner Auth user, test real writes and RLS, and deploy.
 
-External gates: the project-scoped Supabase MCP connection must load in Codex; the
-studio Vercel account must authorize its GitHub connection. Never substitute a
-personal project, expose credentials, or claim local tests prove live database access.
+The studio Supabase connection is active and the schema is applied. Production and
+Preview environment variables are configured; server secrets remain hidden.
+
+Verified: 13 API/rendering tests; admin browser workflow with simulated HTTP;
+desktop and mobile layouts; real production contact, signup and unsubscribe writes;
+anonymous admin rejection; server source exclusion; sitemap, article 404 and HTTPS
+redirects. Temporary submission records were deleted. Database security advisors
+reported no findings. Live owner authentication/publishing awaits the initial Auth user.
+
+Remaining account actions:
+
+- Install/authorize the Vercel GitHub App for the BAG-Studios organization and its
+  BAG-Studios repository. The studio Vercel account currently sees only DismissedGv.
+  Then run `vercel git connect` for this project to enable deployments from GitHub.
+- In the studio project's Supabase Authentication Users screen, create the website
+  Auth user `boringarcadestudios@gmail.com` with a privately chosen password and
+  confirmed email. The Supabase dashboard account is separate from a website Auth user.
+  Sign into `/admin.html` with that website login and verify a real draft/publish cycle.
+
+Never substitute a personal project, expose credentials, or claim local tests prove
+live database access. This implementation records newsletter signups and exports;
+campaign email delivery is not included or silently simulated.
