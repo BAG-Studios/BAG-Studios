@@ -58,11 +58,12 @@ anonymous admin rejection; server source exclusion; sitemap, article 404 and HTT
 redirects. Temporary submission records were deleted. Database security advisors
 reported no findings. Live owner authentication/publishing awaits the initial Auth user.
 
-Remaining account actions:
+GitHub is connected to the studio Vercel project. The repository is
+`BAG-Studios/BAG-Studios-Website`, renamed from `BAG-Studios/BAG-Studios`.
+The production branch is `main`.
 
-- Install/authorize the Vercel GitHub App for the BAG-Studios organization and its
-  BAG-Studios repository. The studio Vercel account currently sees only DismissedGv.
-  Then run `vercel git connect` for this project to enable deployments from GitHub.
+Website login setup:
+
 - In the studio project's Supabase Authentication Users screen, create the website
   Auth user `boringarcadestudios@gmail.com` with a privately chosen password and
   confirmed email. The Supabase dashboard account is separate from a website Auth user.
