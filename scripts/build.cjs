@@ -4,7 +4,7 @@ if(path.dirname(out)!==root||path.basename(out)!=='public')throw new Error('Unex
 fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(out,{recursive:true});
 for(const item of fs.readdirSync(root,{withFileTypes:true})){
- if(item.isFile()&&(/\.(html|css|js)$/.test(item.name)||item.name==='robots.txt')&&item.name!=='contact-preview.html')fs.copyFileSync(path.join(root,item.name),path.join(out,item.name));
+ if(item.isFile()&&(/\.(html|css|js)$/.test(item.name)||item.name==='robots.txt')&&!['contact-preview.html','blog-umea-demo-day.html'].includes(item.name))fs.copyFileSync(path.join(root,item.name),path.join(out,item.name));
 }
 for(const dir of ['Fonts','Icons','Images'])fs.cpSync(path.join(root,dir),path.join(out,dir),{recursive:true,filter:file=>!file.endsWith('contact-portrait-preview.png')});
 fs.writeFileSync(path.join(out,'media-library.json'),JSON.stringify(fs.readdirSync(path.join(root,'Images')).filter(name=>/\.(png|jpe?g|webp)$/i.test(name)&&!name.includes('preview')).map(name=>({name:name.replace(/\.[^.]+$/,'').replace(/[-_]/g,' '),url:'Images/'+name}))));

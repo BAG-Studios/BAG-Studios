@@ -4,7 +4,9 @@ const assert=require('node:assert/strict');
 (async()=>{
  const browser=await chromium.launch({headless:true,channel:'msedge'});
  try{
-  const page=await browser.newPage();page.setDefaultTimeout(8000);let posts=[];const errors=[];page.on('pageerror',error=>errors.push(error.message));
+  const legacy=JSON.parse(require('node:child_process').execFileSync(process.execPath,['scripts/export-legacy-story.cjs'],{encoding:'utf8'}));
+  legacy.id='bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
+  const page=await browser.newPage();page.setDefaultTimeout(8000);let posts=[legacy];const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.route('**/*',route=>{
    const req=route.request(),url=new URL(req.url());let result;
    if(url.hostname==='bag-studios.com'&&url.pathname.startsWith('/Images/'))return route.fulfill({path:require('node:path').join(process.cwd(),decodeURIComponent(url.pathname))});
@@ -13,7 +15,7 @@ const assert=require('node:assert/strict');
     switch(url.searchParams.get('resource')){
      case 'config':result={url:'http://127.0.0.1:3000/test-auth',publishableKey:'test'};break;
      case 'admin-posts':
-      if(req.method()==='POST'){const post={...req.postDataJSON(),id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',published_at:new Date().toISOString()};posts=[post];result={post};}else result={posts};break;
+      if(req.method()==='POST'){const input=req.postDataJSON();const post={...input,id:input.id||'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',published_at:input.published_at||new Date().toISOString()};posts=[post];result={post};}else result={posts};break;
      case 'admin-upload':assert.ok(req.postDataJSON().base64);result={url:'https://bag-studios.com/Images/demo-day-event.png'};break;
      default:result={ok:true};
     }
@@ -23,6 +25,12 @@ const assert=require('node:assert/strict');
   await page.goto('http://127.0.0.1:3000/admin.html',{waitUntil:'domcontentloaded'});
   await page.locator('[name=password]').fill('local-test-password');await page.locator('#login-form button').click();
   await page.locator('#admin-workspace').waitFor({state:'visible'});
+  assert.equal(await page.locator('[name=title]').inputValue(),legacy.title);
+  assert.equal(await page.locator('.editor-block').count(),8);
+  await page.locator('[name=title]').fill('Atira at Umeå Demo Day — updated');
+  await page.locator('#save-post').click();await page.getByText('Published. Your story is now on the blog.',{exact:true}).waitFor();
+  assert.equal(posts[0].id,legacy.id);assert.equal(posts[0].layout.blocks.length,8);assert.equal(posts[0].layout.sidebar.url,legacy.layout.sidebar.url);
+  await page.locator('#new-post').click();
   const form=page.locator('#post-editor');await form.locator('[name=title]').fill('A new studio story');await form.locator('[name=excerpt]').fill('An introduction for a new studio update.');await form.locator('[data-block-field=text]').nth(0).fill('Studio notes');await form.locator('[data-block-field=text]').nth(1).fill('A development update for our players.');
   await page.locator('#layout-mode').selectOption('split');await page.locator('#sidebar-empty').click();await page.locator('.editor-media-choice').filter({hasText:'demo day playtesting'}).click();await page.locator('#sidebar-caption').fill('At the demo table.');await page.locator('#cover-url').fill('Images/demo-day-event.png');await page.locator('#cover-caption').fill('Umeå Demo Day.');
   await page.locator('[data-add=heading]').click();await form.locator('[data-block-field=text]').nth(2).fill('Back to development.');await page.locator('.editor-block').nth(2).getByRole('button',{name:'Move section up',exact:true}).click();

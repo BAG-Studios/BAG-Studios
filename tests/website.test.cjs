@@ -50,6 +50,17 @@ test('article formatting escapes scripts, HTML and malicious links',()=>{
  const html=renderText('# Hello\n\n<script>alert(1)</script>\n\n[jump](javascript:alert(1))');
  assert.match(html,/<h2>Hello<\/h2>/);assert.doesNotMatch(html,/<script>|href=/);assert.match(html,/&lt;script&gt;/);
 });
+
+test('owner edits an existing story by ID rather than inserting a duplicate',async()=>{
+ const id='aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';let writes=0;
+ const api=createApi({env,fetchImpl:async(url,options)=>{
+  if(url.includes('/auth/'))return ok({id:'owner',email:env.ADMIN_EMAIL,email_confirmed_at:'2026-01-01'});
+  writes++;assert.match(url,new RegExp('blog_posts\\?id=eq\\.'+id+'$'));assert.equal(options.method,'PATCH');
+  const post=JSON.parse(options.body);assert.equal(post.title,'Updated Demo Day');return ok([{id,...post}]);
+ }});
+ const res=response();await api(request('admin-posts',{id,title:'Updated Demo Day',slug:'umea-demo-day',excerpt:'Updated introduction for the original story.',content:'The original story can now be edited.',status:'published',published_at:'2026-10-01T10:00:00Z'},{authorization:'Bearer owner'}),res);
+ assert.equal(res.statusCode,200);assert.equal(res.body.post.id,id);assert.equal(writes,1);
+});
 test('published article is rendered on the server with escaped content and its own canonical URL',async()=>{
  const previousFetch=global.fetch;const previousEnv={...process.env};Object.assign(process.env,env);
  global.fetch=async url=>{assert.match(url,/status=eq.published/);return ok([{title:'News <script>',slug:'new-story',excerpt:'A new development story.',category:'STUDIO NOTES',cover_url:'https://bag-studios.com/Images/Logo.png',published_at:'2026-10-01T12:00:00Z',content:'# Our update\n\n<script>unsafe()</script>'}]);};
