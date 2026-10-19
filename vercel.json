@@ -1,6 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": null,
-  "outputDirectory": "."
+  "buildCommand": "node scripts/build.cjs",
+  "installCommand": "",
+  "outputDirectory": "public",
+  "functions": { "api/article.js": { "includeFiles": "blog.html" }, "api/sitemap.js": { "includeFiles": "sitemap.xml" } },
+  "rewrites": [ { "source": "/blog/:slug", "destination": "/api/article?slug=:slug" }, { "source": "/sitemap.xml", "destination": "/api/sitemap" } ],
+  "headers": [ { "source": "/admin.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" } ] }, { "source": "/unsubscribe.html", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Referrer-Policy", "value": "no-referrer" } ] } ]
 }

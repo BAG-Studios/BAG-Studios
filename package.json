@@ -1,0 +1,6 @@
+{
+  "name": "bag-studios-website",
+  "private": true,
+  "scripts": { "build": "node scripts/build.cjs", "test": "node --test tests/*.test.cjs", "dev": "node scripts/dev.cjs" },
+  "engines": { "node": "24.x" }
+}
