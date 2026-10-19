@@ -13,8 +13,6 @@ const assert=require('node:assert/strict');
      case 'config':result={url:'http://127.0.0.1:3000/test-auth',publishableKey:'test'};break;
      case 'admin-posts':
       if(req.method()==='POST'){const post={...req.postDataJSON(),id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',published_at:new Date().toISOString()};posts=[post];result={post};}else result={posts};break;
-     case 'admin-messages':result={messages:[]};break;
-     case 'admin-subscribers':result={subscribers:[]};break;
      default:result={ok:true};
     }
    }else return url.hostname==='127.0.0.1'?route.continue():route.abort();
@@ -26,9 +24,7 @@ const assert=require('node:assert/strict');
   const form=page.locator('#post-editor');await form.locator('[name=title]').fill('A new studio story');await form.locator('[name=excerpt]').fill('An introduction for a new studio update.');await form.locator('[name=content]').fill('# Studio notes\n\nA development update for our players.');
   await page.locator('#preview-post').click();await page.locator('#post-preview').waitFor({state:'visible'});await page.locator('#close-preview').click();
   await form.locator('[name=status]').selectOption('published');await form.locator('[type=submit]').click();await page.getByText('Published. Your story is now on the blog.',{exact:true}).waitFor();assert.equal(posts[0].status,'published');
-  await page.locator('[data-admin-tab=messages]').click();await page.getByText('No messages yet.',{exact:true}).waitFor();
-  await page.locator('[data-admin-tab=subscribers]').click();await page.getByText('No signups yet.',{exact:true}).waitFor();
   await page.locator('#sign-out').click();await page.locator('#admin-login').waitFor({state:'visible'});assert.deepEqual(errors,[]);
-  console.log('PASS admin browser workflow: sign in, preview, publish, messages, subscribers, sign out. HTTP responses simulated.');
+  console.log('PASS admin browser workflow: sign in, preview, publish, sign out. HTTP responses simulated.');
  }finally{await browser.close();}
 })().catch(error=>{console.error(error.message);process.exit(1)});

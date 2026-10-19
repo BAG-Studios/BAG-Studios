@@ -1,4 +1,3 @@
-const crypto = require('node:crypto');
 class HttpError extends Error { constructor(status,message){super(message);this.status=status;} }
 const fail=(status,message)=>{throw new HttpError(status,message)};
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -9,9 +8,7 @@ function renderText(text){
   return '<p>'+escapeHtml(block).replace(/\n/g,'<br>')+'</p>';
  }).join('\n');
 }
-function csv(rows){return '\ufeff'+rows.map(row=>row.map(value=>{let s=String(value??'');if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}).join(',')).join('\r\n');}
 function text(value,min,max,label){if(typeof value!=='string'||value.trim().length<min||value.trim().length>max)fail(400,`Please enter ${label}.`);return value.trim();}
-function email(value){const result=text(value,3,254,'a valid email address').toLowerCase();if(!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(result))fail(400,'Please enter a valid email address.');return result;}
 function parseBody(req){try{return typeof req.body==='string'?JSON.parse(req.body):req.body||{};}catch{fail(400,'Invalid request.');}}
 function postInput(body){
  const title=text(body.title,3,150,'a title between 3 and 150 characters');
@@ -52,24 +49,7 @@ function createApi({env=process.env,fetchImpl=fetch}={}){
     const posts=await client.call('/rest/v1/blog_posts?select=id,slug,title,category,excerpt,cover_url,published_at&status=eq.published&published_at=lte.'+encodeURIComponent(new Date().toISOString())+'&order=published_at.desc&limit=100');
     return res.status(200).json({posts});
    }
-   if(['contact','newsletter'].includes(resource)&&method==='POST'){
-    if(body.website)return res.status(200).json({ok:true});
-    if(body.consent!==true)fail(400,'Please confirm the privacy notice before submitting.');
-    const address=email(body.email);
-    const payload=resource==='contact'?{name:text(body.name,2,100,'your name'),email:address,subject:text(body.subject,2,160,'a subject'),message:text(body.message,10,5000,'a message between 10 and 5,000 characters'),consent_at:new Date().toISOString()}:{email:address,consent_at:new Date().toISOString(),consent_version:'2026-10-19',unsubscribe_token:crypto.randomBytes(32).toString('hex')};
-    // Vercel overwrites x-real-ip at its edge; do not trust arbitrary forwarded chains.
-    const ip=req.headers['x-real-ip']||'local';const key=crypto.createHmac('sha256',env.SUPABASE_SECRET_KEY).update(resource+':'+ip).digest('hex');
-    const allowed=await client.call('/rest/v1/rpc/website_take_rate_limit',{method:'POST',body:{p_key:key,p_limit:5,p_window_seconds:3600}});
-    if(!allowed){res.setHeader('Retry-After','3600');fail(429,'Too many submissions. Please try again in an hour.');}
-    await client.call(resource==='contact'?'/rest/v1/contact_messages':'/rest/v1/newsletter_subscribers?on_conflict=email',{method:'POST',body:payload,prefer:resource==='newsletter'?'resolution=ignore-duplicates,return=minimal':'return=minimal'});
-    return res.status(200).json({ok:true});
-   }
-   if(resource==='unsubscribe'&&method==='POST'){
-    if(!/^[a-f0-9]{64}$/.test(String(body.token||'')))fail(400,'This unsubscribe link is invalid.');
-    await client.call('/rest/v1/newsletter_subscribers?unsubscribe_token=eq.'+body.token,{method:'PATCH',body:{unsubscribed_at:new Date().toISOString()},prefer:'return=minimal'});
-    return res.status(200).json({ok:true});
-   }
-   if(!resource.startsWith('admin-'))fail(404,'Not found.');
+   if(!['admin-posts','admin-delete'].includes(resource))fail(404,'Not found.');
    const token=/^Bearer (.+)$/.exec(req.headers.authorization||'')?.[1];if(!token)fail(401,'Please sign in.');
    const user=await client.call('/auth/v1/user',{token});
    if(!user?.id||!user.email_confirmed_at||String(user.email).toLowerCase()!==(env.ADMIN_EMAIL||'boringarcadestudios@gmail.com').toLowerCase())fail(403,'This account cannot manage the studio website.');
@@ -80,10 +60,8 @@ function createApi({env=process.env,fetchImpl=fetch}={}){
     const saved=await client.call('/rest/v1/blog_posts'+(id?'?id=eq.'+id:''),{method:id?'PATCH':'POST',body:{...input,updated_at:new Date().toISOString()},prefer:'return=representation'});
     return res.status(200).json({post:saved?.[0]});
    }
-   if(resource==='admin-messages'&&method==='GET')return res.status(200).json({messages:await client.call('/rest/v1/contact_messages?select=*&order=created_at.desc&limit=200')});
-   if(resource==='admin-subscribers'&&method==='GET')return res.status(200).json({subscribers:await client.call('/rest/v1/newsletter_subscribers?select=id,email,consent_at,consent_version,unsubscribed_at,unsubscribe_token&order=consent_at.desc&limit=1000')});
    if(resource==='admin-delete'&&method==='POST'){
-    const table={post:'blog_posts',message:'contact_messages',subscriber:'newsletter_subscribers'}[body.kind];
+    const table=body.kind==='post'?'blog_posts':null;
     if(!table||!/^[a-f0-9-]{36}$/.test(body.id||''))fail(400,'Invalid item.');
     await client.call(`/rest/v1/${table}?id=eq.${body.id}`,{method:'DELETE',prefer:'return=minimal'});return res.status(200).json({ok:true});
    }
@@ -91,4 +69,4 @@ function createApi({env=process.env,fetchImpl=fetch}={}){
   }catch(error){return res.status(error.status||500).json({error:error.status?error.message:'Something went wrong. Please try again.'});}
  };
 }
-module.exports={createApi,createClient,escapeHtml,renderText,csv};
+module.exports={createApi,createClient,escapeHtml,renderText};
