@@ -144,7 +144,7 @@ a {
     margin-top: 90px;
 }
 
-.hero-content :is(h1, h2) {
+.hero-content h2 {
     font-size: 60px;
     text-align: center;
     color: var(--site-white);
@@ -565,7 +565,7 @@ a {
     height: 70vh;
 }
 
-.hero-content :is(h1, h2) {
+.hero-content h2 {
     font-size: 40px;
 }
 
@@ -717,7 +717,7 @@ a {
     background-image: linear-gradient(90deg, rgba(12,13,14,.95) 0%, rgba(12,13,14,.78) 30%, rgba(12,13,14,.12) 66%, transparent 100%), linear-gradient(0deg, var(--base-color) 0%, transparent 30%), url("Images/Aelina_chains_image.png");
 }
 .home-page .hero-content { width: min(760px, 56vw); }
-.home-page .hero-content :is(h1, h2) {
+.home-page .hero-content h2 {
     font-size: clamp(48px, 5.9vw, 84px);
     line-height: 1.08;
     text-align: left;
@@ -728,14 +728,13 @@ a {
 @media(max-width:760px) {
     .home-page .hero { padding-inline: 20px; background-position: 61% center; }
     .home-page .hero-content { width: 100%; }
-    .home-page .hero-content :is(h1, h2) { font-size: clamp(40px, 10.5vw, 60px); }
+    .home-page .hero-content h2 { font-size: clamp(40px, 10.5vw, 60px); }
 }
 .site-header nav .nav-discord { display: flex; align-items: center; }
 .site-header .nav-discord img { width: 28px; height: 28px; object-fit: contain; }
 .site-header .nav-discord:hover img { opacity: .75; }
 /* Intro and actions below the Home title. */
 .home-page .hero-intro { margin-top: 30px; color: #d0d0c9; font-size: 18px; line-height: 1.65; max-width: 520px; }
-.home-page .hero-description { margin-top: 14px; color: var(--site-muted, #babbb9); font-size: 16px; line-height: 1.65; max-width: 520px; }
 .home-page .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 35px; }
 .home-page .hero-actions a { display: inline-flex; align-items: center; justify-content: space-between; gap: 40px; font-size: 13px; font-weight: 700; line-height: 1.7; }
 .home-page .hero-discover { background: #e04349; color: #111; border: 1px solid #e04349; padding: 16px 23px; transition: background .2s; }
@@ -843,7 +842,7 @@ html { scroll-behavior: smooth; }
 @media(max-width:400px) { .home-page .hero-bottom > a { white-space: normal; max-width: 90px; } .home-page .hero-bottom > span { max-width: 230px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
 
-.home-page .hero-content :is(h1, h2) .hero-studios { color: #e04349; }
+.home-page .hero-content h2 .hero-studios { color: #e04349; }
 
 /* Standalone exploration cue at the bottom of the Home artwork. */
 .home-page .hero-explore { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 10px; padding: 8px; color: #85858a; font: 10px/1.6 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
